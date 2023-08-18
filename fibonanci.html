@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fibonanci Series</title>
+    </head>
+    <body>
+        <script>
+            let num1 = parseInt(0);
+            let num2 = parseInt(1);
+            let sum = 0;
+            let limit = parseInt(prompt(`Enter your limit`));
+            sum = num1 + num2;
+            document.write(`Fibonanci Series : ${num1} ${num2}`);
+            while(limit>=sum)
+            {   
+                document.write(` ${sum}`);
+                num1 = num2
+                num2 = sum;
+                sum = num1 + num2;    
+            }
+        </script>
+    </body>
+</html>

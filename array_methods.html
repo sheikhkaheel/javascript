@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array Methods</title>
+</head>
+<body>
+    <script>
+        let Companies = ["Microsoft","Google","Amazon","Facebook"];
+        Companies.join(" ");                    // adding space between elements of an array
+        document.write(`${Companies} <br>`);
+        Companies.pop()                         // to remove an element from ending of an array
+        document.write(`${Companies} <br>`);
+        Companies.unshift("Uber");              // adding an element from staring of an array
+        document.write(`${Companies} <br>`);
+        Companies.splice(2,0,"Instagram");      // 2 => position , 0 => one of elements to be removed
+        document.write(`${Companies} <br>`);
+        let Slice = Companies.slice(3);         //creates a new array
+        document.write(`${Slice} <br>`);
+        Companies.reverse()                     //reverses a array
+        document.write(`${Companies} <br>`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        actionName = prompt(`Enter any operator`);
+        let num1 = parseInt(prompt(`Enter first number`));
+        let num2 = parseInt(prompt(`Enter second number`));
+        let sum,mul,div,sub,mod;
+        switch(actionName)
+        {
+            case "+" :
+                document.write(`Welcome to Addition Program <br>`);
+                sum = num1 + num2;
+                document.write(`Submition of ${num1} + ${num2} = ${sum}`);
+                break;
+            case "-" :
+                document.write(`Welcome to Subtraction Program <br>`);
+                sub = num1 - num2;
+                document.write(`Subtraction of ${num1} - ${num2} = ${sub}`);
+                break;
+            case "*" :
+                document.write(`Welcome to Multiplication Program <br>`);
+                mul = num1 * num2;
+                document.write(`Multiplication of ${num1} * ${num2} = ${mul}`);
+                break;
+            case "/" :
+                document.write(`Welcome to Divsion Program <br>`);
+                div = (num1 / num2).toFixed(2);
+                document.write(`Division of ${num1} / ${num2} = ${div}`);
+                break;
+            case "%" :
+                document.write(`Welcome to Modulus Program <br>`);
+                mod = num1 % num2;
+                document.write(`Modulus of ${num1} % ${num2} = ${mod}`);
+                break;   
+            default :
+                document.write(`Invalid Operator`);
+        }
+    </script>
+</body>
+</html>

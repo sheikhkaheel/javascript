@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Even Odd</title>
+</head>
+<body>
+    <script>
+        let num = parseInt(prompt("Enter any number"));
+        while(num!=0)
+        {
+            if(num % 2 == 0)
+            {
+                document.write(`${num} is even <br>`);
+            }
+            if(num % 2 != 0)
+            {
+                document.write(`${num} is odd <br>`);
+            }
+            num = num - 1;
+        }
+    </script>
+</body>
+</html>

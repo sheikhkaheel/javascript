@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Inventory</title>
+    <style>
+        button{
+            position: relative;
+            top: 120px;
+            left: 40px;
+            border: 0px solid;
+            border-radius: 5px;
+            background-color: rgb(199, 199, 199);
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="Clickme()">Buy Now</button>
+    <script>
+        let products, sellingPrice, costPrice, quantity;
+        products = [];
+        sellingPrice = [];
+        costPrice = [];
+        quantity = [];
+        for (let i = 0; i < 2; i++)                                // input array
+        {
+            products[i] = (prompt(`Enter products`));
+            sellingPrice[i] = parseInt(prompt(`Enter sellingPrice`));
+            costPrice[i] = parseInt(prompt(`Enter costPrice`));
+            quantity[i] = (prompt(`Enter quantity`));
+        }
+        document.write(`Menu <br>`)
+        document.write(`Order no  Products  Rupees(₹) <br>`);
+        let i;
+        for ( i = 0; i < products.length; i++)               // output array
+        {
+            document.write(`${i}. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${products[i]} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${sellingPrice[i]} <br>`);
+        }
+        document.write(`<br> <br>`);
+
+        function Clickme() {
+            let customerName = prompt(`Enter your name`);        // customer details
+            let phoneNumber = prompt(`Enter your phone number`);
+
+            let flag, sum = 0;
+            document.write(`Total Bill for customer <br> Name: ${customerName} <br> Phone: ${phoneNumber} <br>`);
+            do {
+                orderNo = prompt(`Enter order no`);              // billing  
+                if(orderNo>i)
+                {
+                    alert(`Invalid Order no`);
+                    orderNo = prompt(`Enter order no`);
+                }                  
+                Pquantity = parseInt(prompt(`Enter quantity of your Product`));
+                document.write(`For order no ${orderNo}:- Quantity ${Pquantity} * ${products[orderNo]}  = ${Pquantity * sellingPrice[orderNo]}₹ <br>`);
+                sum = sum + (sellingPrice[orderNo]*Pquantity);
+                let check = prompt(`If you want to continue buying type yes/no`);
+                if (check === "yes")                                 // continue buying
+                {
+                    flag = true;
+                }
+                else {
+                    flag = false;
+                }
+            } while (flag)
+            document.write(`Amount to be payed off = ${sum}₹`);
+        }
+        
+    </script>
+</body>
+
+</html>

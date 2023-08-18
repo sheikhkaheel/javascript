@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prime numbers</title>
+    </head>
+    <body>
+        <script>
+            let num = parseInt(prompt(`Enter any number`));
+            let k=2,flag;
+            while(k<(num/2))
+            {
+                if(num % k == 0)
+                {
+                    flag = 0;
+                }
+                k++;
+            }
+            if(flag==0)
+            {
+                document.write(`Its not a prime number`);
+            }
+            else
+            {
+                document.write(`Its a prime number`);
+            }
+        </script>
+    </body>
+</html>

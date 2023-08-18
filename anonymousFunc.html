@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script>
+            numbers = [];
+
+            for(let i = 0; i<4; i++)
+            {
+                numbers[i] = parseInt(prompt(`Enter any number`));
+            }
+
+            for(let i = 0; i<4; i++)
+            {
+                document.write(`${numbers[i]} `);
+            }
+            document.write(`<br>`);
+
+            let func = function(iteams)
+            {
+                let arr = 2 * iteams;
+                return arr;
+            }
+
+            let arr2 = [];
+            for(let i = 0; i<numbers.length; i++)
+            {
+                let k = func(numbers[i]);
+                arr2.push(k);
+            }
+
+            for(let i = 0; i<arr2.length; i++)
+            {
+                document.write(`${arr2[i]} `);
+            }
+        </script>
+    </body>
+</html>

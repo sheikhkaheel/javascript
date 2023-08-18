@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let numbers = [];
+
+       // stores numbers in above array.
+        for(let i = 0; i<4 ;i++)
+        {
+            numbers[i] = parseInt(prompt(`Enter any number`));
+        }
+
+        // print the numbers array.
+        document.write(`Old array is `);
+        document.write(`[`);
+        for(let i= 0; i<numbers.length; i++)
+        {
+            document.write(`${numbers[i]} `);
+        }
+        document.write(`] <br>`);
+
+       // below function doubles the arg given from above array.
+        function double(items)                                              
+        {
+            let arr = 2 * items;
+            return arr;
+        }
+
+        let arr2 = [];
+
+        // below loop stores the double value and push to another empty array.
+        for(let i=0; i<numbers.length;i++)
+        {
+            let k = double(numbers[i]);
+            arr2.push(k);
+        }
+
+        // prints the arr2
+        document.write(`New array is `);
+        document.write(`[`);
+        for(let i =0; i<arr2.length; i++)
+        {
+            document.write(`${arr2[i]} `);
+        }
+        document.write(`]`);
+    </script>
+</body>
+</html>

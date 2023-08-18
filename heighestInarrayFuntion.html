@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <p >Heighest no is <span id="demo"></span> </p>
+    <script>
+        let Cars = [1, 100, 200, 440, 650];
+        document.getElementById("demo").innerHTML = Great(Cars);
+        function Great(arr) {
+            let len = arr.length;
+            let max = -Infinity;
+            while (len--) {
+                if (arr[len] > max) {
+                    max = arr[len];
+                } 
+            }
+            return max;
+        }
+    </script>
+</body>
+
+</html>
