@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Funtion Calculator</title>
+</head>
+<body>
+    <script>
+        let Add = function(x1,y1)
+        {
+            let sum;
+            sum = x1 + y1;
+            return sum;
+        }
+
+        let Sub = function(x2,y2)
+        {
+            let sub;
+            sub = x2 + y2;
+            return sub;
+        }
+
+        function Generalfunc(funcName,P1,P2)
+        {
+            return funcName(P1,P2);
+        }
+
+        let Sum = Generalfunc(Add,2,3);
+        document.write(`Sum = ${Sum} <br>`);
+
+        let Minus = Generalfunc(Sub,4,3);
+        document.write(`Sub = ${Minus} <br>`);
+    </script>
+</body>
+</html>
