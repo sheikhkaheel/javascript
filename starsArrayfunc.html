@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<body>
+    <button onclick="Search()">Search</button>
+    <script>
+
+        Stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        Constellations = ["Ursa Minor", "Tarus", "Cygnus", "Lyra", "Aquila", "Usra Major", "Leo"];
+
+        for (let i = 0; i < Stars.length; i++) {
+            document.write(`${Stars[i]} `);
+        }
+
+        function Search() {
+            let Select = function (choice) {
+                for (let i = 0; i < Stars.length; i++) {
+                    if (Stars[i] == choice) {
+                        document.write(`Star index = ${i} & Constellation name = ${Constellations[i]}`);
+                    }
+                }
+            }
+
+            let userInput = prompt(`Enter the star name you want to search`);
+            alert(userInput);
+
+            let i, flag;
+            for (i = 0; i < Stars.length; i++) {
+                if (userInput == Stars[i]) {
+                    flag = true;
+                    Select(userInput);
+                    break;
+                }
+                else {
+                    flag = false;
+                }
+            }
+            if (flag == false) {
+                document.write(`Invalid Star Name`);
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
