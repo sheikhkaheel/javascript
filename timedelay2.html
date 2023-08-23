@@ -1,0 +1,20 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+        <script>
+            for (let i = 0; i < 10; i++) {
+                for (let j = 0; j <= 10; j++) {
+                    setTimeout(()=>{
+                        document.write(`First loop ${i} Second Loop ${j}<br>`);
+                    },1000 * (i*10 + j*1));
+                }
+            }
+        </script>
+    </body>
+
+    </html>
