@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    <body>
+        <script>
+            let oneSec  = function(i,j){
+                document.write(`${i} : ${j}<br>`);
+            }
+            for(let i = 0; i<=5; i++){
+                for(let j = 0; j<=5; j++){
+                    setTimeout(oneSec,1000*(i*6 + j*1),i,j);
+                }
+            }
+        </script>
+    </body>
+</html>
