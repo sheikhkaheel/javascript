@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            clock with time delay
+        </title>
+    </head>
+    <body>
+        <script>
+            for(let i = 0; i<=24; i++)
+            {
+                for(let j = 0; j<60; j++)
+                {
+                    for(let k = 0; k<59; k++)
+                    {
+                        function call(){
+                            document.write(`${i}:${j}:${k}<br>`);
+                        }
+                        
+                    }
+                }
+            }
+            setInterval(call,1000);
+        </script>
+    </body>
+</html>

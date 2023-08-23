@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Creating Function Which Is Not Dependent On Parameters
+        </title>
+    </head>
+    <body>
+        <script>
+            function Sum()
+            {
+                let Add = 0;
+                for(let i = 0; i<arguments.length; i++)
+                {
+                    Add = Add + arguments[i];
+                }
+                return Add;
+            }
+            let Result = Sum(2,3,9);
+            document.write(`Sum : ${Result}`);
+        </script>
+    </body>
+</html>
