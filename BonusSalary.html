@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Provide Bonus to Employe</title>
+</head>
+<body>
+    <script>
+        employe = ["Kaheel","Zaid","Zubair","Kafeel","Saalim","Areeb","Numaan"];
+        oldSalary = [250000,200000,200000,200000,100000,20000,20000];
+
+        // here we used map method of array to create a new array which modified the old array and added bonuses.
+        newSalary = oldSalary.map((item)=>{
+            let collect;
+            if(item == 250000)                       
+            {
+                collect = item + 50000;
+            }
+            if(item == 200000)
+            {
+                collect = item + 40000;
+            }
+            if(item == 100000)
+            {
+                collect = item + 30000;
+            }
+            if(item == 20000)
+            {
+                collect = item + 5000;
+            }
+            return collect;
+        })
+        for(let i = 0; i<oldSalary.length; i++)
+        {
+            document.write(`${employe[i]} old salary = ${oldSalary[i]}<br>`);
+        }
+        document.write(`<br><br>`);
+        for(let i = 0; i<newSalary.length; i++)
+        {
+            document.write(`${employe[i]} new salary = ${newSalary[i]}<br>`);
+        }
+    </script>
+</body>
+</html>
