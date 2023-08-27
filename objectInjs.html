@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript Object</title>
+</head>
+<body>
+    <script>
+        let names = ["Kaheel","Zaid","Zubair","Kafeel","Saalim","Numaan"];
+        let rollNo = [5,7,8,6,10,12];
+        let address = ["Illahi Bagh","Dargah","Lalbazar","Illahi Bagh","Baspora","Zuqura"];
+        let func = function(){
+            document.write(`I am `);
+            document.write(`inside a `);
+            document.write(`function `);
+        }
+        let objectType = {
+            names,
+            rollNo,
+            address,
+            func
+        };
+        document.write(`Names : ${objectType.names}<br>`);
+        document.write(`Rollno : ${objectType.rollNo}<br>`);
+        document.write(`Address : ${objectType.address}<br>`);
+        document.write(objectType.func());
+    </script>
+</body>
+</html>
