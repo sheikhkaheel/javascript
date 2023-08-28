@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Appending Div</title>
+</head>
+
+<body id="bd">
+    <button onclick="show()">Add</button>
+    <script>
+        function show() {
+            let bd = document.getElementById(`bd`);
+            let div = document.createElement(`div`);
+            div.innerHTML = '<b> Hello ,WORLD <b>';
+            let a = document.createElement(`a`);
+            a.href = "https://www.youtube.com";
+            a.textContent = `Youtube`;
+            bd.appendChild(div);
+            div.appendChild(a);
+        }
+    </script>
+</body>
+
+</html>
