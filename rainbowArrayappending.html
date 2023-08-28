@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Rainbow Appending Array</title>
+    <style>
+        button{
+            border: 0px solid;
+            background-color: #dfdcdc;
+            padding: 10px;
+            border-radius: 8px;
+            font-family: 'Franklin Gothic Medium';
+            color: rgb(56, 106, 198);
+        }
+        button:hover{
+            background-color: rgb(56, 106, 198);
+            color: white;
+        }
+        .red,.green,.blue,.violet,.orange,.yellow,.indigo
+        {
+            font-family:'Trebuchet MS', sans-serif;
+            text-shadow: 0 0 10px rgb(0, 0, 0.1);
+            font-size: 25px;
+        }
+        .red:hover,.green:hover,.blue:hover,.violet:hover,.orange:hover,.yellow:hover,.indigo:hover{
+            color: white;
+        }
+        .red {
+            color: red;
+        }
+
+        .yellow {
+            color: yellow;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .violet {
+            color: violet;
+        }
+
+        .indigo {
+            color: indigo;
+        }
+
+        .orange {
+            color: orange;
+        }
+
+        .green{
+            color: green;
+        }
+    </style>
+</head>
+
+<body id="bd">
+    <button onclick="show()">Add</button>
+    <script>
+        function show() {
+            let bd = document.getElementById('bd');
+            let Names = ["Kaheel", "Zaid", "kafeel", "zubair", "Saalim", "Numaan", "Tabish"];
+            
+            for (let i = 0; i < Names.length; i++) {
+                let div = document.createElement('div');
+                
+                if (Names[i].charAt(0) == "K") {
+                    div.setAttribute('class', 'blue');
+                }
+                else if (Names[i].charAt(0) == "Z") {
+                    div.setAttribute('class', 'green');
+                }
+                else if (Names[i].charAt(0) == "k") {
+                    div.setAttribute('class', 'red');
+                }
+                else if (Names[i].charAt(0) == "z") {
+                    div.setAttribute('class', 'yellow');
+                }
+                else if (Names[i].charAt(0) == "S") {
+                    div.setAttribute('class', 'violet');
+                }
+                else if (Names[i].charAt(0) == "N") {
+                    div.setAttribute('class', 'indigo');
+                }
+                else {
+                    div.setAttribute('class', 'orange');
+                }
+                
+                div.innerHTML = Names[i];
+                bd.appendChild(div);
+            }
+        }
+    </script>
+</body>
+
+</html>
