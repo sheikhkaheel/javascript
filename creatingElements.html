@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <label>Select elements</label>
+    <select id="elementName" onchange="getElement(this)">
+        <option id="div" value="div">Div</option>
+        <option id="p" value="p">Paragraph</option>
+        <option id="a" value="a">Anchor</option>
+        <option id="span" value="span">Span</option>
+    </select>
+    <br> <br>
+    <label>Select Text</label>
+    <select id="elementText" onchange="getElementText(this)">
+        <option id="helloworld" value="helloworld">Hello World</option>
+        <option id="hi" value="hi">Hi</option>
+        <option id="how" value="how">How</option>
+        <option id="are" value="are">Are</option>
+    </select> <br> <br>
+    <button onclick="addElement()">Add</button>
+
+    <script type="text/javascript">
+
+        let elementName;
+        let elementText;
+
+        function getElement(that) {
+            elementName = that.value;
+        }
+
+        function getElementText(that) {
+            elementText = that.value;
+        }
+        
+        function addElement() {
+            let elName = document.createElement(elementName);
+            elName.innerHTML = elementText;
+            let body = document.getElementsByTagName('body')[0];
+            body.append(elName);
+        }
+
+    </script>
+</body>
+
+</html>
