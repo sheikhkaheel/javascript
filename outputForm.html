@@ -28,7 +28,7 @@
         if (!outputValidation.lname.includes(Data2)) {
             alert('Wrong Last Name');
         }
-        if(!outputValidation.fname.includes(Data1) && !outputValidation.lname.includes(Data2)) {
+        if(outputValidation.fname.includes(Data1) && outputValidation.lname.includes(Data2)) {
             let formDetails = [Data1, Data2];
             for (let i = 0; i < formDetails.length; i++) {
                 document.write(`${formDetails[i]}<br>`);
