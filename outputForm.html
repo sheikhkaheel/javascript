@@ -4,6 +4,36 @@
     <title>Output Form</title>
 </head>
 <body>
-    
+    <script>
+        // Get the query string from the URL
+        queryString = window.location.search;
+        urlParams = new URLSearchParams(queryString);
+
+        // Get the 'fname' and 'lname' parameters from the URL
+        let Data1 = urlParams.get('fname');
+        let Data2 = urlParams.get('lname');
+
+        // Define the expected values for 'fname' and 'lname'
+        let outputValidation = {
+            fname: ["sheikh", "mohammad"],
+            lname: ["kaheel", "kafeel"]
+        };
+
+        // Check if the provided values match the expected values
+        if (!outputValidation.fname.includes(Data1)) {
+            alert('Wrong First Name');
+        }
+        if (!outputValidation.lname.includes(Data2)) {
+            alert('Wrong Last Name');
+        }
+
+        // Store the values in an array
+        let formDetails = [Data1, Data2];
+
+        // Display the values on the page
+        for (let i = 0; i < formDetails.length; i++) {
+            document.write(`${formDetails[i]}<br>`);
+        }
+    </script>
 </body>
 </html>
