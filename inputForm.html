@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Input Form</title>
+</head>
+
+<body>
+    <form action="outputForm.html">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" id="fname"> <br> <br>
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" id="lname"> <br> <br>
+        <input type="submit" value="Submit" onclick="return validateForm()">
+    </form>
+    <script>
+        function validateForm(){
+            let Fname = document.getElementById("fname");
+            let Lname = document.getElementById("lname");
+            if (Fname.value == "") {
+                alert("Please enter your first name");
+                return false;
+            }
+            if (Lname.value === "") {
+                alert("Please enter your last name");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
