@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Output Form</title>
 </head>
+
 <body>
     <script>
         // Get the query string from the URL
@@ -26,14 +28,15 @@
         if (!outputValidation.lname.includes(Data2)) {
             alert('Wrong Last Name');
         }
-
-        // Store the values in an array
-        let formDetails = [Data1, Data2];
-
-        // Display the values on the page
-        for (let i = 0; i < formDetails.length; i++) {
-            document.write(`${formDetails[i]}<br>`);
+        else {
+            let formDetails = [Data1, Data2];
+            for (let i = 0; i < formDetails.length; i++) {
+                document.write(`${formDetails[i]}<br>`);
+            }
         }
+
+
     </script>
 </body>
+
 </html>
