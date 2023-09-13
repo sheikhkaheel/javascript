@@ -91,6 +91,34 @@
         document.writeln(person.lastname);
         document.writeln(person.address);
         document.writeln(person.phone);
+
+        Maths = {
+            pie : 3.14,
+            length : 20,
+            breadth : 15,
+            height : 6, 
+            radius : 5,
+            base : 2,
+            areaOfsquare : function(){
+                return this.length * this.length;
+            },
+            areaOfrectangle : function(){
+                return this.length * this.breadth;
+            },
+            areaOfcircle : function(){
+                return this.pie * this.radius * this.radius;
+            },
+            areaOfisoscelesTriangle : function(){
+                return 1/2 * this.breadth * this.height;
+            },
+            areaOfequilateralTriangle : function(){
+                return (1/2*3)/4 * this.length;
+            },
+            areaOfrightAnglettraingle  : function(){
+                1/2 * this.base * this.height;
+            }
+        };
+        alert(`Area of circle is ${Maths.areaOfcircle()}`);
     </script>
 </body>
 </html>
