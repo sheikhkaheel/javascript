@@ -119,6 +119,36 @@
             }
         };
         alert(`Area of circle is ${Maths.areaOfcircle()}`);
+
+        let persons = {
+            firstName : "sheikh",
+            lastName : "kaheel",
+            address : {
+                home : "Illahi bagh near grid",
+                "house no" : 1
+            },
+            message : ()=>{
+                return "hello, world";
+            }
+        }
+
+        document.writeln("<br>" + persons.firstName + " " + persons.lastName);
+        document.writeln("<br>" + persons.address.home + " " + persons.address["house no"]);
+
+        let items = {
+            fruits : "banana",
+            vegetables : "tomato",
+            cerals : "rice",
+            junkFood : "chips"
+        }
+
+        let{address : human} = person;
+        document.write(`<br> ${human}`)
+
+        let life = ['easy','dreams','problem','depression','performance','sad','hardworking','success'];
+
+        let path = [...life];
+        document.write(`<br> Using spread operator ${path}`);
     </script>
 </body>
 </html>
