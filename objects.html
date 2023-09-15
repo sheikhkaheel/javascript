@@ -149,6 +149,11 @@
 
         let path = [...life];
         document.write(`<br> Using spread operator ${path}`);
+
+        document.write("<br>"+"Using for in loop");
+        for (let key in path){
+            document.write(`<br> ${key} ${path[key]}`);
+        }
     </script>
 </body>
 </html>
