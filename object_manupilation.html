@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Object Manupilation</title>
+</head>
+
+<body>
+    <script>
+        let masjidList = [
+            {
+                masjidId: 1,
+                masjidName: "A",
+                masjidCapacity: 100,
+                masjidWashroom: 5,
+                masjidToilet: "yes",
+                masjidPincode: "190020"
+            },
+            {
+                masjidId: 2,
+                masjidName: "B",
+                masjidCapacity: 90,
+                masjidWashroom: 4,
+                masjidToilet: "yes",
+                masjidPincode: "190010"
+            },
+            {
+                masjidId: 3,
+                masjidName: "C",
+                masjidCapacity: 80,
+                masjidWashroom: 6,
+                masjidToilet: "yes",
+                masjidPincode: "190020"
+            },
+            {
+                masjidId: 4,
+                masjidName: "D",
+                masjidCapacity: 70,
+                masjidWashroom: 5,
+                masjidToilet: "yes",
+                masjidPincode: "190000"
+            },
+            {
+                masjidId: 5,
+                masjidName: "E",
+                masjidCapacity: 100,
+                masjidWashroom: 6,
+                masjidToilet: "yes",
+                masjidPincode: "190011"
+            },
+            {
+                masjidId: 6,
+                masjidName: "F",
+                masjidCapacity: 90,
+                masjidWashroom: 7,
+                masjidToilet: "yes",
+                masjidPincode: "190020"
+            },
+            {
+                masjidId: 7,
+                masjidName: "G",
+                masjidCapacity: 110,
+                masjidWashroom: 8,
+                masjidToilet: "yes",
+                masjidPincode: "190030"
+            },
+            {
+                masjidId: 8,
+                masjidName: "H",
+                masjidCapacity: 50,
+                masjidWashroom: 3,
+                masjidToilet: "yes",
+                masjidPincode: "190001"
+            },
+            {
+                masjidId: 9,
+                masjidName: "I",
+                masjidCapacity: 85,
+                masjidWashroom: 4,
+                masjidToilet: "yes",
+                masjidPincode: "190010"
+            },
+            {
+                masjidId: 10,
+                masjidName: "J",
+                masjidCapacity: 99,
+                masjidWashroom: 5,
+                masjidToilet: "yes",
+                masjidPincode: "190020"
+            },
+        ];
+
+        document.write("List of Masjids" + "<br><br>");
+
+        for (let i = 0; i < masjidList.length; i++) {
+            document.write(`${i + 1}:-  {`);
+            for (let key in masjidList[i]) {
+                document.write(`${key} : ${masjidList[i][key]} <br>`);
+            }
+            document.write("};");
+            document.write(`<br>`);
+        }
+        document.write("<br>");
+        document.write("Masjids with Pincode 190020" + "<br><br>");
+
+        let particularMasjid = masjidList.filter((items) => {
+            if (items.masjidPincode == 190020) {
+                document.write("{");
+                for (let key in items) {
+                    document.write(`${key} : ${items[key]}<br>`);
+                }
+                document.write("};");
+                document.write(`<br>`);
+            }
+        })
+
+        document.write("<br>" + "Modified Masjids" + "<br><br>");
+
+        let modifiedMasjid = particularMasjid.map((items,index) => {
+            if (index == masjidCapacity) {
+                let temp = items[masjidCapacity] + 5;
+                return temp;
+            }
+        });
+
+        for(let i = 0; i < modifiedMasjid.length; i++) {
+            document.write(modifiedMasjid[i]);
+        }
+
+        alert(modifiedMasjid);
+    </script>
+</body>
+
+</html>
