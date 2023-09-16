@@ -116,15 +116,22 @@
 
         document.write("<br>" + "Modified Masjids" + "<br><br>");
 
-        let modifiedMasjid = particularMasjid.map((items,index) => {
-            if (index == masjidCapacity) {
+        let modifiedMasjid = particularMasjid.map((items) => {
+            for(let key in items) {
+                if (key == masjidCapacity) {
                 let temp = items[masjidCapacity] + 5;
                 return temp;
+            }
             }
         });
 
         for(let i = 0; i < modifiedMasjid.length; i++) {
-            document.write(modifiedMasjid[i]);
+            document.write(`${i + 1}:-  {`);
+            for (let key in modifiedMasjid[i]) {
+                document.write(`${key} : ${modifiedMasjid[i][key]} <br>`);
+            }
+            document.write("};");
+            document.write(`<br>`);
         }
 
         alert(modifiedMasjid);
