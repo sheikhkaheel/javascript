@@ -152,12 +152,15 @@
                     //document.write(`${item[key]}  <br>`);
                     if(item[key] === value){
                         let div = document.createElement('div');
+                        div.innerHTML = `MasjidName : ${item.masjidName} <br> MasjidPincode : ${item.masjidPincode} <br> MasjidCapacity : ${item.masjidCapacity}`;
+                        alert(div.innerHTML);
                         let img = document.createElement('img');
                         img.src = item.masjidImg;
-                        div.innerHTML = `MasjidName : ${item.masjidName} <br> MasjidPincode : ${item.masjidPincode} <br> MasjidCapacity : ${item.masjidCapacity}`;
                         div.style.border = "0px solid darkgrenade"
                         div.style.borderRadius = "5px"
-                        div.style.backgroundColor = "green"
+                        div.style.backgroundColor = "rgb(0,122,165"
+                        div.style.color = "white"
+                        div.style.fontFamily = "arial"
                         div.style.width = "300px"
                         div.style.padding = "20px"
                         img.style.width = "100px"
@@ -165,8 +168,8 @@
                         img.style.float = "right"
                         img.style.marginTop = "-45px"
                         div.append(img);
-                        document.body.append(div);
                         document.write(`<br>`);
+                        document.body.append(div);
                     }
                 }
             })
