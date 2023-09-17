@@ -103,27 +103,41 @@
         document.write("<br>");
         document.write("Masjids with Pincode 190020" + "<br><br>");
 
+        // let particularMasjid = masjidList.filter((items) => {
+        //     if (items.masjidPincode == 190020) {
+        //         document.write("{");
+        //         for (let key in items) {
+        //             document.write(`${key} : ${items[key]}<br>`);
+        //         }
+        //         document.write("};");
+        //         document.write(`<br>`);
+        //     }
+        // })
+
+
         let particularMasjid = masjidList.filter((items) => {
             if (items.masjidPincode == 190020) {
-                document.write("{");
-                for (let key in items) {
-                    document.write(`${key} : ${items[key]}<br>`);
-                }
-                document.write("};");
-                document.write(`<br>`);
+               return items;
             }
         })
+
+
+        console.log(particularMasjid);
 
         document.write("<br>" + "Modified Masjids" + "<br><br>");
 
         let modifiedMasjid = particularMasjid.map((items) => {
             for(let key in items) {
-                if (key == masjidCapacity) {
+                if (key == items[masjidCapacity]) {
                 let temp = items[masjidCapacity] + 5;
                 return temp;
             }
             }
         });
+
+        
+
+        console.log(modifiedMasjid);
 
         for(let i = 0; i < modifiedMasjid.length; i++) {
             document.write(`${i + 1}:-  {`);

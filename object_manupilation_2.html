@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Object Manupilation Part2</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <script>
+        let masjidList = [
+            {
+                masjidId: 1,
+                masjidLocaton : "Anantnag",
+                masjidImg : "https://th.bing.com/th?id=OIP.gIMr3gZXTgQJxXSJKzUIjgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+                masjidName: "A",
+                masjidCapacity: 100,
+                masjidWashroom: 5,
+                masjidToilet: "yes",
+                masjidPincode: "190020"
+            },
+            {
+                masjidId: 2,
+                masjidLocaton : "Srinagar",
+                masjidImg : "https://th.bing.com/th?id=OIP.gIMr3gZXTgQJxXSJKzUIjgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+                masjidName: "B",
+                masjidCapacity: 90,
+                masjidWashroom: 4,
+                masjidToilet: "yes",
+                masjidPincode: "190010"
+            },
+            {
+                masjidId: 3,
+                masjidName: "C",
+                masjidImg : "https://th.bing.com/th?id=OIP.gIMr3gZXTgQJxXSJKzUIjgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+                masjidLocaton : "Srinagar",
+                masjidCapacity: 80,
+                masjidWashroom: 6,
+                masjidToilet: "yes",
+                masjidPincode: "190020"
+            },
+            {
+                masjidId: 4,
+                masjidName: "D",
+                masjidImg : "https://th.bing.com/th?id=OIP.gIMr3gZXTgQJxXSJKzUIjgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+                masjidLocaton : "Ganderbal",
+                masjidCapacity: 70,
+                masjidWashroom: 5,
+                masjidToilet: "yes",
+                masjidPincode: "190000"
+            },
+            {
+                masjidId: 5,
+                masjidName: "E",
+                masjidImg : "https://th.bing.com/th?id=OIP.gIMr3gZXTgQJxXSJKzUIjgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+                masjidLocaton : "Ganderbal",
+                masjidCapacity: 70,
+                masjidWashroom: 5,
+                masjidToilet: "yes",
+                masjidPincode: "190000"
+            },
+            {
+                masjidId: 6,
+                masjidName: "F",
+                masjidImg : "https://th.bing.com/th?id=OIP.gIMr3gZXTgQJxXSJKzUIjgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+                masjidLocaton : "Pulwama",
+                masjidCapacity: 70,
+                masjidWashroom: 5,
+                masjidToilet: "yes",
+                masjidPincode: "190000"
+            },
+            {
+                masjidId: 7,
+                masjidName: "G",
+                masjidImg : "https://th.bing.com/th?id=OIP.gIMr3gZXTgQJxXSJKzUIjgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+                masjidLocaton : "Anantnag",
+                masjidCapacity: 70,
+                masjidWashroom: 5,
+                masjidToilet: "yes",
+                masjidPincode: "190000"
+            },
+            {
+                masjidId: 8,
+                masjidName: "H",
+                masjidImg : "https://th.bing.com/th?id=OIP.gIMr3gZXTgQJxXSJKzUIjgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+                masjidLocaton : "Pulwama",
+                masjidCapacity: 70,
+                masjidWashroom: 5,
+                masjidToilet: "yes",
+                masjidPincode: "190000"
+            },
+            {
+                masjidId: 9,
+                masjidName: "H",
+                masjidImg : "https://th.bing.com/th?id=OIP.gIMr3gZXTgQJxXSJKzUIjgHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2",
+                masjidLocaton : "Srinagar",
+                masjidCapacity: 70,
+                masjidWashroom: 5,
+                masjidToilet: "yes",
+                masjidPincode: "190000"
+            },
+        ];
+
+        districtList = [
+            {
+                districtId: 0,
+                districtName: "--Select-Disrtict--",
+            },
+            {
+                districtId: 1,
+                districtName: "Srinagar",
+            },
+            {
+                districtId: 2,
+                districtName: "Anantnag",
+            },
+            {
+                districtId: 1,
+                districtName: "Ganderbal",
+            },
+            {
+                districtId: 1,
+                districtName: "Sopore",
+            },
+            {
+                districtId: 1,
+                districtName: "Pulwama",
+            }
+        ];
+
+        let value;
+
+        let selectDropdown = document.createElement("select");
+        selectDropdown.addEventListener("change", (event) => {
+            value = event.target.value;
+        });
+        for (let i = 0; i < districtList.length; i++) {
+            let optionDropdown = document.createElement("option");
+            optionDropdown.value = districtList[i].districtName;
+            optionDropdown.id = `${i + 1}`;
+            optionDropdown.innerHTML = districtList[i].districtName;
+            selectDropdown.append(optionDropdown);
+            document.body.append(selectDropdown);
+        }
+
+        let button = document.createElement('button');
+        button.onclick = (() => {
+            masjidList.map((item)=>{
+                for (let key in item) {
+                    //document.write(`${item[key]}  <br>`);
+                    if(item[key] === value){
+                        let div = document.createElement('div');
+                        let img = document.createElement('img');
+                        img.src = item.masjidImg;
+                        div.innerHTML = `MasjidName : ${item.masjidName} <br> MasjidPincode : ${item.masjidPincode} <br> MasjidCapacity : ${item.masjidCapacity}`;
+                        div.style.border = "0px solid darkgrenade"
+                        div.style.borderRadius = "5px"
+                        div.style.backgroundColor = "green"
+                        div.style.width = "300px"
+                        div.style.padding = "20px"
+                        img.style.width = "100px"
+                        img.style.borderRadius = "50%"
+                        img.style.float = "right"
+                        img.style.marginTop = "-45px"
+                        div.append(img);
+                        document.body.append(div);
+                        document.write(`<br>`);
+                    }
+                }
+            })
+        })
+        button.innerHTML = "Search";
+        document.body.append(button);
+
+
+
+
+
+    </script>
+</body>
+
+</html>
