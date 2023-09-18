@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Button Calculatpr</title>
+    <style>
+        #parentDiv{
+            margin-top: 50px;
+            margin-left: 40%;
+            width: 300px;
+            height: 300px;
+            background-color: #363636;
+        }
+        #childDiv{
+            margin-left: 10px;
+            width: 260px;
+            height: 60px;
+            padding: 10px;
+            color: white;
+            font-size: 30px;
+            background-color: rgb(68, 68, 128);
+        }
+        .opr{
+            
+            padding: 10px;
+        }
+        .plus{
+            position: relative;
+            top: 10px ;
+            left: 8% ;
+        }
+        .minus{
+            position: relative;
+            top: 10px ;
+            left: 16%;
+        }
+        .mul{
+            position: relative;
+            top: 10px ;
+            left: 24% ;
+        }
+        .div{
+            position: relative;
+            top: 10px ;
+            left: 32% ;
+        }
+        .equal{
+            position: relative;
+            top: 10px ;
+            left: 40% ;
+        }
+        .zero{
+            position: relative;
+            top: 95px ;
+            left: -42% ;
+        }
+        .one{
+            position: relative;
+            top: 95px ;
+            left: -34% ;
+        }
+        .two{
+            position: relative;
+            top: 95px ;
+            left: -26% ;
+        }
+        .three{
+            position: relative;
+            top: 95px ;
+            left: -18% ;
+        }
+        .four{
+            position: relative;
+            top: 55px ;
+            left: 80% ;
+        }
+        .five{
+            position: relative;
+            top: 130px ;
+            left: -3% ;
+        }
+        .six{
+            position: relative;
+            top: 130px ;
+            left: 6% ;
+        }
+        .seven{
+            position: relative;
+            top: 130px ;
+            left: 14% ;
+        }
+        .eight{
+            position: relative;
+            top: 130px ;
+            left: 22% ;
+        }
+        .nine{
+            position: relative;
+            top: 130px ;
+            left: 28% ;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        // Calculator structure 
+
+        let div = document.createElement('div');
+        div.id = 'parentDiv';
+        let div2 = document.createElement('div');
+        div2.id = 'childDiv';
+        div.appendChild(div2);
+        document.body.appendChild(div);
+
+        // creating operator butttons
+
+        let num1 = 0;
+        let num2 = 0;
+        operator = null;
+
+        let plusBtn = document.createElement('button');
+        plusBtn.innerHTML = "+";
+        plusBtn.addEventListener('click', function (){
+            handleOperator("+");
+        })
+        plusBtn.classList = "opr plus";
+        div.appendChild(plusBtn);
+
+        let minusBtn = document.createElement('button');
+        minusBtn.classList = "opr minus";
+        minusBtn.addEventListener('click', function (){
+            handleOperator("-");
+        })
+        minusBtn.innerHTML = "-";
+        div.appendChild(minusBtn);
+
+        let mulBtn = document.createElement('button');
+        mulBtn.classList = "opr mul";
+        mulBtn.addEventListener('click', function (){
+            handleOperator("*");
+        })
+        mulBtn.innerHTML = "*";
+        div.appendChild(mulBtn);
+
+        let divBtn = document.createElement('button');
+        divBtn.classList = "opr div";
+        divBtn.addEventListener('click', function (){
+            handleOperator("/");
+        })
+        divBtn.innerHTML = "/";
+        div.appendChild(divBtn);
+
+        let equalBtn = document.createElement('button');
+        equalBtn.classList = "opr equal";
+        equalBtn.addEventListener("click", function(){
+            updateResult();
+        })
+        equalBtn.innerHTML = "=";
+        div.appendChild(equalBtn);
+
+        // number Buttons
+
+        let zero = document.createElement('button');
+        zero.innerHTML = "0";
+        zero.classList = "opr zero";
+        zero.addEventListener("click",function () {
+            handleNumber(0);
+        })
+
+        let one = document.createElement('button');
+        one.classList = "opr one";
+        one.addEventListener("click",function () {
+            handleNumber(1);
+        })
+        one.innerHTML = "1";
+
+        let two = document.createElement('button');
+        two.innerHTML = "2";
+        two.addEventListener("click",function () {
+            handleNumber(2);
+        })
+        two.classList = "opr two";
+
+        let three = document.createElement('button');
+        three.innerHTML = "3";
+        three.addEventListener("click",function () {
+            handleNumber(3);
+        })
+        three.classList = "opr three";
+
+        let four = document.createElement('button');
+        four.innerHTML = "4";
+        four.classList = "opr four";
+        four.addEventListener("click",function () {
+            handleNumber(4);
+        })
+
+        let five = document.createElement('button');
+        five.innerHTML = "5";
+        five.classList = "opr five";
+        five.addEventListener("click",function () {
+            handleNumber(5);
+        })
+        
+
+        let six = document.createElement('button');
+        six.innerHTML = "6";
+        six.addEventListener("click",function () {
+            handleNumber(6);
+        })
+        six.classList = "opr six";
+
+        let seven = document.createElement('button');
+        seven.innerHTML = "7";
+        seven.addEventListener("click",function () {
+            handleNumber(7);
+        })
+        seven.classList = "opr seven"
+
+        let eight = document.createElement('button');
+        eight.innerHTML = "8";
+        eight.addEventListener("click",function () {
+            handleNumber(8);
+        })
+        eight.classList = "opr eight"
+
+        let nine = document.createElement('button');
+        nine.innerHTML = "9";
+        nine.addEventListener("click",function () {
+            handleNumber(9);
+        })
+        nine.classList = "opr nine";
+
+        div.append(zero);
+        div.append(one);
+        div.append(two);
+        div.append(three);
+        div.append(four);
+        div.append(five);
+        div.append(six);
+        div.append(seven);
+        div.append(eight);
+        div.append(nine);
+
+        // functions
+
+        
+        function handleNumber(number){
+            if(operator === null){
+                num1 = num1 * 10 + number;
+                div2.innerHTML = num1;
+            } else {
+                num2 = num2 * 10 + number;
+                div2.innerHTML = num2;
+            }
+        }
+
+
+        function handleOperator(op){
+            operator = op;
+            div2.innerHTML = operator;
+        }
+
+        function updateResult(){
+            let result;
+            if(operator === "+"){
+                result = num1 + num2;
+            } else if(operator === "-"){
+                result = num1 - num2;
+            } else if(operator === "*"){
+                result = num1 * num2;
+            } else if(operator === "/"){
+                result = num1 / num2;
+            }
+            else {
+                result = null;
+            }
+
+            div2.innerHTML = `Result: ${result}`
+        }
+    </script>
+</body>
+</html>
