@@ -26,77 +26,82 @@
         .plus{
             position: relative;
             top: 10px ;
-            left: 8% ;
+            left: 6% ;
         }
         .minus{
             position: relative;
             top: 10px ;
-            left: 16%;
+            left: 12%;
         }
         .mul{
             position: relative;
             top: 10px ;
-            left: 24% ;
+            left: 18% ;
         }
         .div{
             position: relative;
             top: 10px ;
-            left: 32% ;
+            left: 24% ;
         }
         .equal{
             position: relative;
             top: 10px ;
-            left: 40% ;
+            left: 30% ;
+        }
+        .clear{
+            position: relative;
+            top: 10px ;
+            left: 36% ;
         }
         .zero{
             position: relative;
             top: 95px ;
-            left: -42% ;
+            left: -54% ;
         }
         .one{
             position: relative;
             top: 95px ;
-            left: -34% ;
+            left: -46% ;
         }
         .two{
             position: relative;
             top: 95px ;
-            left: -26% ;
+            left: -38% ;
         }
         .three{
             position: relative;
-            top: 95px ;
-            left: -18% ;
+            top: 55px ;
+            left: 65% ;
         }
         .four{
             position: relative;
             top: 55px ;
-            left: 80% ;
+            left: 74% ;
         }
         .five{
             position: relative;
             top: 130px ;
-            left: -3% ;
+            left: -13% ;
         }
         .six{
             position: relative;
             top: 130px ;
-            left: 6% ;
+            left: -5% ;
         }
         .seven{
             position: relative;
             top: 130px ;
-            left: 14% ;
+            left: 4% ;
         }
         .eight{
             position: relative;
             top: 130px ;
-            left: 22% ;
+            left: 14% ;
         }
         .nine{
             position: relative;
             top: 130px ;
-            left: 28% ;
+            left: 22% ;
         }
         
     </style>
@@ -157,6 +162,14 @@
         })
         equalBtn.innerHTML = "=";
         div.appendChild(equalBtn);
+
+        let clear = document.createElement('button');
+        clear.classList = "opr clear";
+        clear.innerHTML = "C";
+        clear.addEventListener("click", function(){
+            updateClear();
+        })
+        div.appendChild(clear);
 
         // number Buttons
 
@@ -261,8 +274,9 @@
             div2.innerHTML = operator;
         }
 
+        let result;
+
         function updateResult(){
-            let result;
             if(operator === "+"){
                 result = num1 + num2;
             } else if(operator === "-"){
@@ -271,12 +285,19 @@
                 result = num1 * num2;
             } else if(operator === "/"){
                 result = num1 / num2;
-            }
-            else {
+            }  else {
                 result = null;
             }
 
             div2.innerHTML = `Result: ${result}`
+        }
+
+        function updateClear(){
+            num1 = 0;
+            num2 = 0;
+            operator = null;
+            result = "";
+            div2.innerHTML = result;
         }
     </script>
 </body>
