@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Button Calculatpr</title>
+    <title>Button Calculator</title>
     <style>
-        #parentDiv{
+        #parentDiv {
             margin-top: 50px;
             margin-left: 30%;
             width: 500px;
@@ -11,7 +12,8 @@
             background-color: #363636;
             border-radius: 10px;
         }
-        #childDiv{
+
+        #childDiv {
             margin-left: 10px;
             width: 460px;
             height: 100px;
@@ -21,133 +23,157 @@
             background-color: rgb(86, 86, 164);
             border-radius: 10px;
         }
-        .opr{
+
+        .opr {
             padding: 20px;
             box-shadow: 2px 2px 5px rgb(0, 0, 0);
         }
-        .opr:hover{
+
+        .opr:hover {
             background-color: rgb(33, 29, 29);
             color: white;
         }
-        .plus{
+
+        .plus {
             position: relative;
-            top: 20px ;
-            left: 6% ;
+            top: 20px;
+            left: 6%;
             color: blue;
         }
-        .plus:hover{
+
+        .plus:hover {
             background-color: rgb(57, 57, 197);
             color: white;
             text-shadow: 2px 1px 1px black;
         }
-        .minus{
+
+        .minus {
             position: relative;
-            top: 20px ;
+            top: 20px;
             left: 12%;
             color: rgb(147, 147, 51);
         }
-        .minus:hover{
+
+        .minus:hover {
             color: white;
             background-color: rgb(186, 186, 110);
             text-shadow: 2px 1px 1px black;
         }
-        .mul{
+
+        .mul {
             position: relative;
-            top: 20px ;
-            left: 18% ;
+            top: 20px;
+            left: 18%;
             color: rgb(140, 102, 212);
         }
-        .mul:hover{
+
+        .mul:hover {
             color: white;
             background-color: rgb(140, 102, 212);
             text-shadow: 2px 1px 1px black;
         }
-        .div{
+
+        .div {
             position: relative;
-            top: 20px ;
-            left: 24% ;
+            top: 20px;
+            left: 24%;
             color: rgb(91, 142, 187);
         }
-        .div:hover{
+
+        .div:hover {
             color: white;
             background-color: rgb(91, 142, 187);
             text-shadow: 2px 1px 1px black;
         }
-        .equal{
+
+        .equal {
             position: relative;
-            top: 20px ;
-            left: 30% ;
-            color: rgb(97, 188, 140) ;
+            top: 20px;
+            left: 30%;
+            color: rgb(97, 188, 140);
         }
-        .clear:hover{
+
+        .clear:hover {
             background-color: rgb(214, 71, 71) !important;
             color: white !important;
             text-shadow: 2px 1px 1px black;
         }
-        .equal:hover{
+
+        .equal:hover {
             background-color: rgb(97, 188, 140) !important;
             color: white !important;
             text-shadow: 2px 1px 1px black;
         }
-        .clear{
+
+        .clear {
             position: relative;
-            top: 20px ;
-            left: 36% ;
+            top: 20px;
+            left: 36%;
             color: red;
         }
-        .zero{
+
+        .zero {
             position: relative;
-            top: 145px ;
-            left: -53% ;
+            top: 145px;
+            left: -53%;
         }
-        .one{
+
+        .one {
             position: relative;
-            top: 145px ;
-            left: -45% ;
+            top: 145px;
+            left: -45%;
         }
-        .two{
+
+        .two {
             position: relative;
-            top: 145px ;
-            left: -36% ;
+            top: 145px;
+            left: -36%;
         }
-        .three{
+
+        .three {
             position: relative;
-            top: 85px ;
-            left: 65% ;
+            top: 85px;
+            left: 65%;
         }
-        .four{
+
+        .four {
             position: relative;
-            top: 85px ;
-            left: 74% ;
+            top: 85px;
+            left: 74%;
         }
-        .five{
+
+        .five {
             position: relative;
-            top: 200px ;
-            left: -13% ;
+            top: 200px;
+            left: -13%;
         }
-        .six{
+
+        .six {
             position: relative;
-            top: 200px ;
-            left: -5% ;
+            top: 200px;
+            left: -5%;
         }
-        .seven{
+
+        .seven {
             position: relative;
-            top: 200px ;
-            left: 4% ;
+            top: 200px;
+            left: 4%;
         }
-        .eight{
+
+        .eight {
             position: relative;
-            top: 200px ;
-            left: 14% ;
+            top: 200px;
+            left: 14%;
         }
-        .nine{
+
+        .nine {
             position: relative;
-            top: 200px ;
-            left: 22% ;
+            top: 200px;
+            left: 22%;
         }
-        
     </style>
 </head>
+
 <body>
     <script>
         // Calculator structure 
@@ -161,13 +187,13 @@
 
         // creating operator butttons
 
-        let num1 = 0;
-        let num2 = 0;
-        operator = null;
+        let num1 = "";
+        let num2 = "";
+        let operator = "";
 
         let plusBtn = document.createElement('button');
         plusBtn.innerHTML = "+";
-        plusBtn.addEventListener('click', function (){
+        plusBtn.addEventListener('click', function () {
             handleOperator("+");
         })
         plusBtn.classList = "opr plus";
@@ -175,7 +201,7 @@
 
         let minusBtn = document.createElement('button');
         minusBtn.classList = "opr minus";
-        minusBtn.addEventListener('click', function (){
+        minusBtn.addEventListener('click', function () {
             handleOperator("-");
         })
         minusBtn.innerHTML = "-";
@@ -183,7 +209,7 @@
 
         let mulBtn = document.createElement('button');
         mulBtn.classList = "opr mul";
-        mulBtn.addEventListener('click', function (){
+        mulBtn.addEventListener('click', function () {
             handleOperator("*");
         })
         mulBtn.innerHTML = "*";
@@ -191,7 +217,7 @@
 
         let divBtn = document.createElement('button');
         divBtn.classList = "opr div";
-        divBtn.addEventListener('click', function (){
+        divBtn.addEventListener('click', function () {
             handleOperator("/");
         })
         divBtn.innerHTML = "/";
@@ -199,7 +225,7 @@
 
         let equalBtn = document.createElement('button');
         equalBtn.classList = "opr equal";
-        equalBtn.addEventListener("click", function(){
+        equalBtn.addEventListener("click", function () {
             updateResult();
         })
         equalBtn.innerHTML = "=";
@@ -208,7 +234,7 @@
         let clear = document.createElement('button');
         clear.classList = "opr clear";
         clear.innerHTML = "C";
-        clear.addEventListener("click", function(){
+        clear.addEventListener("click", function () {
             updateClear();
         })
         div.appendChild(clear);
@@ -218,27 +244,27 @@
         let zero = document.createElement('button');
         zero.innerHTML = "0";
         zero.classList = "opr zero";
-        zero.addEventListener("click",function () {
+        zero.addEventListener("click", function () {
             handleNumber(0);
         })
 
         let one = document.createElement('button');
         one.classList = "opr one";
-        one.addEventListener("click",function () {
+        one.addEventListener("click", function () {
             handleNumber(1);
         })
         one.innerHTML = "1";
 
         let two = document.createElement('button');
         two.innerHTML = "2";
-        two.addEventListener("click",function () {
+        two.addEventListener("click", function () {
             handleNumber(2);
         })
         two.classList = "opr two";
 
         let three = document.createElement('button');
         three.innerHTML = "3";
-        three.addEventListener("click",function () {
+        three.addEventListener("click", function () {
             handleNumber(3);
         })
         three.classList = "opr three";
@@ -246,42 +272,42 @@
         let four = document.createElement('button');
         four.innerHTML = "4";
         four.classList = "opr four";
-        four.addEventListener("click",function () {
+        four.addEventListener("click", function () {
             handleNumber(4);
         })
 
         let five = document.createElement('button');
         five.innerHTML = "5";
         five.classList = "opr five";
-        five.addEventListener("click",function () {
+        five.addEventListener("click", function () {
             handleNumber(5);
         })
-        
+
 
         let six = document.createElement('button');
         six.innerHTML = "6";
-        six.addEventListener("click",function () {
+        six.addEventListener("click", function () {
             handleNumber(6);
         })
         six.classList = "opr six";
 
         let seven = document.createElement('button');
         seven.innerHTML = "7";
-        seven.addEventListener("click",function () {
+        seven.addEventListener("click", function () {
             handleNumber(7);
         })
         seven.classList = "opr seven"
 
         let eight = document.createElement('button');
         eight.innerHTML = "8";
-        eight.addEventListener("click",function () {
+        eight.addEventListener("click", function () {
             handleNumber(8);
         })
         eight.classList = "opr eight"
 
         let nine = document.createElement('button');
         nine.innerHTML = "9";
-        nine.addEventListener("click",function () {
+        nine.addEventListener("click", function () {
             handleNumber(9);
         })
         nine.classList = "opr nine";
@@ -299,42 +325,57 @@
 
         // functions
 
-        
-        function handleNumber(number){
-            if(operator === null){
-                num1 = num1 * 10 + number;
-                div2.innerHTML = num1;
+
+        function handleNumber(number) {
+
+            if (operator === '') {
+                num1 += number;
             } else {
-                num2 = num2 * 10 + number;
-                div2.innerHTML = num2;
+                num2 += number;
             }
+            updateDisplay();
         }
 
 
-        function handleOperator(op){
+        function handleOperator(op) {
+            if (num1 !== '' && num2 !== '') {
+                updateResult();
+            }
             operator = op;
             div2.innerHTML = operator;
+            updateDisplay();
         }
 
-        let result;
+        function updateDisplay() {
+            div2.innerHTML = num1 + operator + num2;
+        }
 
-        function updateResult(){
-            if(operator === "+"){
-                result = num1 + num2;
-            } else if(operator === "-"){
-                result = num1 - num2;
-            } else if(operator === "*"){
-                result = num1 * num2;
-            } else if(operator === "/"){
-                result = num1 / num2;
-            }  else {
+        let result = "";
+
+
+        function updateResult() {
+            if (num1 !== "" && num2 !== "") {
+                num1 = parseInt(num1);
+                num2 = parseInt(num2);
+            }
+            if (operator === "+") {
+                result = eval(num1 + num2);
+            } else if (operator === "-") {
+                result = eval(num1 - num2);
+            } else if (operator === "*") {
+                result = eval(num1 * num2);
+            } else if (operator === "/") {
+                result = eval(num1 / num2);
+            } else {
                 result = null;
             }
-
-            div2.innerHTML = `Result: ${result}`
+            num1 = result
+            num2 = '';
+            operator = '';
+            updateDisplay();
         }
 
-        function updateClear(){
+        function updateClear() {
             num1 = 0;
             num2 = 0;
             operator = null;
@@ -343,4 +384,5 @@
         }
     </script>
 </body>
+
 </html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Button Calculator</title>
+    <style>
+        /* Your CSS styles here... */
+    </style>
+</head>
+
+<body>
+    <script>
+        // Calculator structure
+
+        let div = document.createElement('div');
+        div.id = 'parentDiv';
+        let div2 = document.createElement('div');
+        div2.id = 'childDiv';
+        div.appendChild(div2);
+        document.body.appendChild(div);
+
+        // Variables for the calculator
+        let num1 = '';
+        let num2 = '';
+        let operator = '';
+        let result = '';
+
+        // Creating operator buttons
+        const operators = ['+', '-', '*', '/'];
+
+        for (const op of operators) {
+            let opBtn = document.createElement('button');
+            opBtn.innerHTML = op;
+            opBtn.classList = `opr ${op}`;
+            opBtn.addEventListener('click', function () {
+                handleOperator(op);
+            });
+            div.appendChild(opBtn);
+        }
+
+        // Equal button
+        let equalBtn = document.createElement('button');
+        equalBtn.classList = "opr equal";
+        equalBtn.addEventListener("click", function () {
+            updateResult();
+        });
+        equalBtn.innerHTML = "=";
+        div.appendChild(equalBtn);
+
+        // Clear button
+        let clearBtn = document.createElement('button');
+        clearBtn.classList = "opr clear";
+        clearBtn.innerHTML = "C";
+        clearBtn.addEventListener("click", function () {
+            updateClear();
+        });
+        div.appendChild(clearBtn);
+
+        // Number buttons
+        for (let i = 0; i <= 9; i++) {
+            let numBtn = document.createElement('button');
+            numBtn.innerHTML = i;
+            numBtn.classList = `opr ${i}`;
+            numBtn.addEventListener("click", function () {
+                handleNumber(i);
+            });
+            div.appendChild(numBtn);
+        }
+
+        // Functions
+
+        function handleNumber(number) {
+            if (operator === '') {
+                num1 += number;
+            } else {
+                num2 += number;
+            }
+            updateDisplay();
+        }
+
+        function handleOperator(op) {
+            if (num1 !== '' && num2 !== '') {
+                updateResult();
+            }
+            operator = op;
+            updateDisplay();
+        }
+
+        function updateResult() {
+            if (num1 !== '' && num2 !== '') {
+                num1 = parseFloat(num1);
+                num2 = parseFloat(num2);
+                switch (operator) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        if (num2 !== 0) {
+                            result = num1 / num2;
+                        } else {
+                            result = 'Error: Division by zero';
+                        }
+                        break;
+                    default:
+                        result = '';
+                        break;
+                }
+                num1 = result;
+                num2 = '';
+                operator = '';
+                updateDisplay();
+            }
+        }
+
+        function updateClear() {
+            num1 = '';
+            num2 = '';
+            operator = '';
+            result = '';
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            div2.innerHTML = num1 + operator + num2;
+        }
+    </script>
+</body>
+
+</html>
