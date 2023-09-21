@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Switch Bulb</title>
+    <style>
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body style="background-color:black;">
+    <p style="color: white; margin-left: 40%;">Click on the image turn On/Off </p>
+    <img src="bulb-images/bulb-on.png" alt="">
+    <script>
+        let img = document.querySelector("img");
+        img.addEventListener("click", () => {
+            if (img.src.match("bulb-on")) {
+                img.src = "bulb-images/bulb-off.png";
+            } else {
+                img.src = "bulb-images/bulb-on.png";
+            }
+
+        })
+    </script>
+</body>
+
+</html>
