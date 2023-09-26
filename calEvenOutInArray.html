@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let array = [23, 2, 3, 443, 23, 2, 3];
+        let num;
+        let add;
+        let even = 0;
+        let count = [];
+
+        for (let i = 0; i < array.length; i++) {
+            add = 0; // Initialize add to 0 for each new number
+            num = array[i]; // Store the current number in num
+            while (num !== 0) {
+                alert(num % 10); // Print the last digit of the current number
+                num = parseInt(num / 10); // Remove the last digit
+                add = add + 1; // Increment the count of digits
+            }
+            count.push(add); // Push the count of digits to the count array
+        }
+
+        for (let i = 0; i < count.length; i++) {
+            if (count[i] % 2 === 0) {
+                even = even + 1;
+            }
+        }
+
+        console.log(`Result ${even}`); 
+    </script>
+</body>
+
+</html>
