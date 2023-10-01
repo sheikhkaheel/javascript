@@ -9,6 +9,7 @@
         }
 
         .anchor {
+            padding: 10px 10px 10px 10px;
             position: relative;
             margin-top: 20px;
             margin-left: auto;
@@ -17,11 +18,44 @@
             border: 1px solid rgb(203, 193, 193);
             border-radius: 5px;
         }
+
+        img{
+            width: 100%;
+            height: 100px;
+        }
+
+        #stateDrop{
+            margin-left: 23%;
+        }
+
+        select{
+            border: 0px solid;
+            background-color: rgb(233, 238, 238);
+            border-radius: 5px;
+            padding: 2px 5px 2px 5px ;
+            color: rgb(74, 91, 137);
+        }
+
+        select:hover{
+            color: black;
+            padding: 3px 5px 3px 5px ;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        input,button{
+            border: 0px solid;
+            background-color: rgb(237, 241, 241);
+            border-radius: 5px;
+            padding: 2px 5px 2px 5px ;
+            color: rgb(0, 0, 0);
+        }
+
+        
     </style>
 </head>
 
 <body>
-    <select onchange="getState(this)">
+    <select id="stateDrop" onchange="getState(this)">
         <option value="0">--Select any option--</option>
         <option value="Kashmir">Kashmir</option>
 
@@ -80,22 +114,18 @@
                     div.style.display = "none";
                     var anchor = div.getElementsByTagName('a');
                     let div2 = document.getElementById('div2');
-                    div2.innerHTML = "";
                     for (let i = 0; i < anchor.length; i++) {
                         let div3 = document.createElement('div');
                         div3.className = "anchor";
-                        if (i == 5 || i == 10 || i == 15 || i == 20 || i == 25) {
+                        if (i == i && i % 5 == 0) {
                             let img = document.createElement('img');
                             img.src = "bulb-images/bulb-off.png";
                             img.alt = "It's a bulb image";
-                            img.width = "100%";
-                            img.height = "100px"; 
-                            console.log(img);
                             div3.appendChild(img); 
                         } else {
                             div3.innerHTML = anchor[i].innerHTML;
                         }
-                        div2.appendChild(div3); 
+                        div2.append(div3); 
                     }
                 } else {
                     div.innerHTML = "Error";
