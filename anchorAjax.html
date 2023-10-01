@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Anchor Ajax</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .anchor {
+            position: relative;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 600px;
+            border: 1px solid rgb(203, 193, 193);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <select onchange="getState(this)">
+        <option value="0">--Select any option--</option>
+        <option value="Kashmir">Kashmir</option>
+
+    </select>
+    <select onchange="getDistricts(this)">
+        <option value="0">--Select Districts--</option>
+        <option value="Srinagar">Srinagar</option>
+        <option value="Ganerbal">Ganerbal</option>
+        <option value="Sopore">Sopore</option>
+        <option value="Pulwama">Pulwama</option>
+    </select>
+    <select onchange="getHotels(this)">
+        <option value="0">--Select Hotels--</option>
+        <option value="The Grand Mamta Hotel">The Grand Mamta Hotel</option>
+        <option value="Green Resort Hotel">Green Resort Hotel</option>
+        <option value="U2 Plaza Hotel">U2 Plaza Hotel</option>
+        <option value="Easton Grand Hotel">Easton Grand Hotel</option>
+    </select>
+    <input type="text" name="seacrh" placeholder="Search here..." id="searchTxt">
+    <button onclick="ajaxCall()">Seacrh</button>
+    <div id="spanAjax"></div>
+    <div id="div2"></div>
+    <script>
+        let searchText = document.getElementById("searchTxt");
+        let xhr = new XMLHttpRequest();
+        let div = document.getElementById('spanAjax');
+        // functions
+        let State = "";
+        let Districts = "";
+        let Hotels = "";
+
+        function getState(that) {
+            State = that.value;
+        }
+
+        function getDistricts(that) {
+            Districts = that.value;
+        }
+
+        function getHotels(that) {
+            Hotels = that.value;
+            call();
+        }
+
+        function call() {
+            searchText.value = State + " " + Districts + " " + Hotels;
+        }
+
+        function ajaxCall() {
+            let fileURL = `https://www.google.com/search?q=${searchText.value}`;
+            xhr.open("GET", fileURL);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    let responseText = xhr.responseText;
+                    div.innerHTML = responseText;
+                    div.style.display = "none";
+                    var anchor = div.getElementsByTagName('a');
+                    let div2 = document.getElementById('div2');
+                    div2.innerHTML = "";
+                    for (let i = 0; i < anchor.length; i++) {
+                        let div3 = document.createElement('div');
+                        div3.className = "anchor";
+                        if (i == 5 || i == 10 || i == 15 || i == 20 || i == 25) {
+                            let img = document.createElement('img');
+                            img.src = "bulb-images/bulb-off.png";
+                            img.alt = "It's a bulb image";
+                            img.width = "100%";
+                            img.height = "100px"; 
+                            console.log(img);
+                            div3.appendChild(img); 
+                        } else {
+                            div3.innerHTML = anchor[i].innerHTML;
+                        }
+                        div2.appendChild(div3); 
+                    }
+                } else {
+                    div.innerHTML = "Error";
+                }
+            }
+            xhr.send();
+        }
+
+
+    </script>
+</body>
+
+</html>

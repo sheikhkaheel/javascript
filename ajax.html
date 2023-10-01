@@ -16,7 +16,7 @@
             let fileURL = `https://www.google.com/search?q=${searchTxt.value}`;
             let div = document.getElementById('spanAjax');
             xhr.open("GET", fileURL);
-            xhr.onload = function () {
+            xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     let responseText = xhr.responseText;
                     div.innerHTML = responseText;
