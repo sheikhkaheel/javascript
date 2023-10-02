@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Parser</title>
+    <style>
+        button {
+            margin: 20px;
+            padding: 5px 20px 5px 20px;
+            border: 0px solid ;
+        }
+        button:hover {
+            border: 1px solid blue;
+            color: blue;
+            border-radius: 20px;
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table,tr,td{
+            border: 0px solid;
+            border-radius: 5px;
+        }
+        td{
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgb(224, 217, 217);
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="getData()">Get</button>
+    <div id="firstDiv"></div>
+    <script>
+        function getData() {
+            let div = document.getElementById("firstDiv");
+            let xhr = new XMLHttpRequest();
+            let url = 'text.json';
+            xhr.open('GET', url);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        let response = xhr.responseText;
+                        let objData = JSON.parse(response);
+                        let table = document.createElement('table');
+                        for (let i = 0; i < objData.Persons.length; i++) {
+                            let tr = document.createElement('tr');
+                            
+                            let tdFirstName = document.createElement('td');
+                            let tdLastName = document.createElement('td');
+                            let tdAge = document.createElement('td');
+                            let tdGender = document.createElement('td');
+                            
+                            tdFirstName.innerHTML = objData.Persons[i]["firstName"];
+                            tdLastName.innerHTML = objData.Persons[i]["lastName"];
+                            tdAge.innerHTML = objData.Persons[i]["age"];
+                            tdGender.innerHTML = objData.Persons[i]["gender"];
+                            if(objData.Persons[i]["gender"] == "male") {
+                                tdGender.style.backgroundColor = "lightblue";
+                            } else {
+                                tdGender.style.backgroundColor = "lightgreen";
+                            }
+                            if(objData.Persons[i]["firstName"] == "Firstname" || objData.Persons[i]["lastName"] == "Lastname" || objData.Persons[i]["age"] == "Age" || objData.Persons[i]["gender"] == "Gender") {
+                                tdFirstName.style.backgroundColor = "red";
+                                tdFirstName.style.color = "white";
+                                tdLastName.style.backgroundColor = "red";
+                                tdLastName.style.color = "white";
+                                tdAge.style.backgroundColor = "red";
+                                tdAge.style.color = "white";
+                                tdGender.style.backgroundColor = "red"; 
+                                tdGender.style.color = "white"; 
+                            }
+                            
+                            tr.appendChild(tdFirstName);
+                            tr.appendChild(tdLastName);
+                            tr.appendChild(tdAge);
+                            tr.appendChild(tdGender);
+                            
+                            table.appendChild(tr);
+                        }
+                        
+                        div.appendChild(table);
+                    } else {
+                        div.innerHTML = "Error";
+                    }
+                }
+            }
+            xhr.send();
+        }
+    </script>
+</body>
+
+</html>

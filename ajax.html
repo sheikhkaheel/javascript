@@ -6,20 +6,29 @@
 </head>
 
 <body>
-    <input type="text" name="search" id="searchTxt" placeholder="Search here...">
-    <button onclick="usingAjax()">Search</button>
-    <div id="spanAjax"></div>
+    <input type="text" name="search" id="searchText" placeholder="Search here...">
+    <button onclick="callAjax()">Search</button>
+    <div id="content"></div>
+    <div id="changeText"></div>
     <script>
-        function usingAjax() {
+        function callAjax(){
+            let input = document.getElementById("searchText");
+            let div = document.getElementById('content');
             let xhr = new XMLHttpRequest();
-            let searchTxt = document.getElementById("searchTxt");
-            let fileURL = `https://www.google.com/search?q=${searchTxt.value}`;
-            let div = document.getElementById('spanAjax');
-            xhr.open("GET", fileURL);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
+            let url = `http://www.google.com/search?q=${input.value}`;
+            xhr.open("GET",url);
+            xhr.onload = function() {
+                if(xhr.readyState == 4 && xhr.status == 200) {
                     let responseText = xhr.responseText;
                     div.innerHTML = responseText;
+                    div.style.display = 'none';
+                    let anchorTag = div.getElementsByTagName('a');
+                    let div2 = document.getElementById('changeText');
+                    for(let i=0; i<anchorTag.length; i++) {
+                        let div3 = document.createElement('div');
+                        div3.innerHTML = anchorTag[i].innerHTML;
+                        div2.append(div3);
+                    }
                 } else {
                     div.innerHTML = "Error";
                 }
