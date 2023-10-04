@@ -6,6 +6,7 @@
     <style>
         body {
             padding: 20px;
+            margin-bottom: 20px;
         }
 
         .anchor {
@@ -50,11 +51,69 @@
             color: rgb(0, 0, 0);
         }
 
+        #searchToggle {
+            width: 20px;
+            height: 15px;
+        }
         
+        #spanAjax {
+            margin-top: 40px;
+            position: relative;
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 0px solid;border-radius: 10px;
+            background-color: rgb(252, 254, 255);
+            padding: 20px;
+            object-fit:contain;
+        }
+        
+        h3{
+            color: rgb(197, 129, 169);
+        }
+
+        span{
+            font-family: 'Trebuchet MS', sans-serif !important;
+            font-style: italic;
+        }
+
+        .VuuXrf{
+            color:rgb(93, 153, 161) !important;
+            font-size: 20px !important;
+        }
+
+        cite{
+            font-weight: bold !important;
+            color: red !important;
+        }
+
+        a{
+            color: rgb(164, 185, 32) !important;
+        }
+        #header{
+            position: relative;
+            margin-left: 40%;
+            font-size: 40px;
+            color: rgb(49, 47, 47);
+            margin-bottom: 70px;
+        }
+
+        #red{
+            color: red !important;
+        }
+
+        #chinar {
+            width: 150px;
+            height: 100px;
+            position: absolute;
+            left: -150px;
+            top: -20px;
+        }
     </style>
 </head>
 
 <body>
+    <h1 id="header"><img src="https://jiffyplants.com/wp-content/uploads/2023/05/ezgif.com-gif-maker-2023-05-25T081715.702.webp" id="chinar" alt="Chinar"> <span id="red">کشمیری</span> تلاش</h1>
     <select id="stateDrop" onchange="getState(this)">
         <option value="0">--Select any option--</option>
         <option value="Kashmir">Kashmir</option>
@@ -75,7 +134,7 @@
         <option value="Easton Grand Hotel">Easton Grand Hotel</option>
     </select>
     <input type="text" name="seacrh" placeholder="Search here..." id="searchTxt">
-    <button onclick="ajaxCall()">Seacrh</button>
+    <button onclick="ajaxCall()"><img id="searchToggle" src="https://cdn-icons-png.flaticon.com/512/3031/3031293.png" alt="its a image"></button>
     <div id="spanAjax"></div>
     <div id="div2"></div>
     <script>
@@ -111,22 +170,22 @@
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     let responseText = xhr.responseText;
                     div.innerHTML = responseText;
-                    div.style.display = "none";
-                    var anchor = div.getElementsByTagName('a');
-                    let div2 = document.getElementById('div2');
-                    for (let i = 0; i < anchor.length; i++) {
-                        let div3 = document.createElement('div');
-                        div3.className = "anchor";
-                        if (i == i && i % 5 == 0) {
-                            let img = document.createElement('img');
-                            img.src = "bulb-images/bulb-off.png";
-                            img.alt = "It's a bulb image";
-                            div3.appendChild(img); 
-                        } else {
-                            div3.innerHTML = anchor[i].outerHTML;
-                        }
-                        div2.append(div3); 
-                    }
+                    // div.style.display = "none";
+                    // var anchor = div.getElementsByTagName('a');
+                    // let div2 = document.getElementById('div2');
+                    // for (let i = 0; i < anchor.length; i++) {
+                    //     let div3 = document.createElement('div');
+                    //     div3.className = "anchor";
+                    //     if (i == i && i % 5 == 0) {
+                    //         let img = document.createElement('img');
+                    //         img.src = "bulb-images/bulb-off.png";
+                    //         img.alt = "It's a bulb image";
+                    //         div3.appendChild(img); 
+                    //     } else {
+                    //         div3.innerHTML = anchor[i].outerHTML;
+                    //     }
+                    //     div2.append(div3); 
+                    // }
                 } else {
                     div.innerHTML = "Error";
                 }
