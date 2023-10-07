@@ -1,0 +1,88 @@
+#searchText,#btn{
+    position:relative;
+    left: 32%;
+    top: 200px;
+    padding: 10px 15px 10px 15px;
+    border: 0px solid transparent;
+    background-color: rgb(246, 245, 244);
+    border-radius: 15px;
+    box-shadow: 0px 0px 7px rgb(47, 139, 96);
+}
+
+#searchText {
+    width: 400px;
+}
+
+#btn{
+    left: 32%;
+    margin-bottom: 30%;
+}
+
+#content {
+    position: relative;
+    width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0px solid ;
+    background-color: rgb(254, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    top: -150px;
+}
+
+.CvDJxb,.GLcBOb,.cCvmNd,#result-stats, .WE0UJf, .NyYcvd, .fqgGwb, #oFNiHe{
+    display: none;
+}
+
+.LC20lb, .MBeuO, .DKV0Md, .n0jPhd, .ynAwRc, .tNxQIb, .nDgy9d , .HnYYW , .UEiegc, .v3HaEc, .MUxGbd, .lyLwlc, .lEBKkf , a{
+    color: rgb(96, 122, 73) !important;
+    font-family:fantasy !important;
+}
+
+span, .Wt5Tfe {
+    color: #00811c !important;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.N54PNb, .BToiNc, .cvP2Ce,
+.kb0PBd, .cvP2Ce, .LnCrMe,
+.g, .Ww4FFb, .vt6azd, .tF2Cxc, .asEBEc
+{
+    padding: 10px;
+    background-color: rgb(237, 243, 236) !important;
+    border-radius: 10px;
+} 
+
+.s75CSd, .u60jwe, .r2fjmd, .AB4Wff
+{
+    color: rgb(73, 88, 120) !important;
+}
+
+.kb0PBd, .cvP2Ce, .LnCrMe {
+    margin-right: 10px ;
+}
+
+.srKDX{
+    width: 97% !important;
+}
+
+#chinar {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    left: -150px;
+    top: -20px;
+}
+
+#header{
+    position: relative;
+    margin-left: 45%;
+    font-size: 40px;
+    color: rgb(49, 47, 47);
+    margin-top: 30px;
+    margin-bottom: -55px;
+}
+
+#searchToggle {
+    width: 10px;
+}

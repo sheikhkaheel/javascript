@@ -7,14 +7,11 @@
         <script>
             let num = parseInt(prompt(`Enter any number`));
             let k=2,flag;
-            while(k<(num/2))
-            {
-                if(num % k == 0)
-                {
+            do {
+                if(num  % k == 0) {
                     flag = 0;
                 }
-                k++;
-            }
+            } while(k < num/4)
             if(flag==0)
             {
                 document.write(`Its not a prime number`);
@@ -23,6 +20,37 @@
             {
                 document.write(`Its a prime number`);
             }
+
+            // for(let k = 2; k < (num/2); k++) {
+            //     if(num  % k == 0){
+            //         flag = 0;
+            //     }
+            // }
+            // if(flag==0)
+            // {
+            //     document.write(`Its not a prime number`);
+            // }
+            // else
+            // {
+            //     document.write(`Its a prime number`);
+            // }
+            
+            // while(k<(num/2))
+            // {
+            //     if(num % k == 0)
+            //     {
+            //         flag = 0;
+            //     }
+            //     k++;
+            // }
+            // if(flag==0)
+            // {
+            //     document.write(`Its not a prime number`);
+            // }
+            // else
+            // {
+            //     document.write(`Its a prime number`);
+            // }
         </script>
     </body>
 </html>
