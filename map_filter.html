@@ -7,43 +7,42 @@
 
 <body>
     <script>
-        let jsonObject = {
-            "Persons" : [
-                {
-                    "firstName": "John",
-                    "lastName": "Cesna"
-                }
-            ]
-        };
-
-        let Persons = [ 
+        let Persons = [
             {
-                firstName : "John",
-                lastName : "Cesna",
-                age: 19
+                firstName: "John",
+                lastName: "Cesna",
+                day: 12,
+                age: 20
             },
             {
-                firstName : "zaid",
-                lastName : "shan",
-                age : 9
+                firstName: "zaid",
+                lastName: "shan",
+                age: 9
             },
             {
-                firstName : "saalim",
-                lastName : "wali",
-                age : 24
+                firstName: "saalim",
+                lastName: "wali",
+                day: 12,
+                age: 24
+            },
+            {
+                firstName: "zubair",
+                lastName: "ahmad",
+                day: 12,
+                age: 28
             }
         ]
 
-        let newPersons =  Persons.filter((el,indx) => {
-            if(Persons[indx].age > 18)
-            {
-                return Persons[indx] ;
-            }           
-        }).map((el,indx) => {
-            let result = Persons[indx].firstName + " " + "newText" + " ";
-            return result ;
-        })
-        document.write(newPersons);
+        let newPersons = Persons
+            .filter(el => el.age > 18) // Filter out objects with age > 18
+            .map(el => {
+                // Map filtered objects to a new format
+                if (el.day == 12) {
+                    return `<br> { FirstName ${el.firstName} Age: ${el.age} Years }`; // Corrected format
+                }
+            });
+
+        document.write(`Filtered and Modified :- ${newPersons.join(', ')}`); // Join the results into a string
 
     </script>
 </body>
