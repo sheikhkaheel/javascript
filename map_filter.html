@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let jsonObject = {
+            "Persons" : [
+                {
+                    "firstName": "John",
+                    "lastName": "Cesna"
+                }
+            ]
+        };
+
+        let Persons = [ 
+            {
+                firstName : "John",
+                lastName : "Cesna",
+                age: 19
+            },
+            {
+                firstName : "zaid",
+                lastName : "shan",
+                age : 9
+            },
+            {
+                firstName : "saalim",
+                lastName : "wali",
+                age : 24
+            }
+        ]
+
+        let newPersons =  Persons.filter((el,indx) => {
+            if(Persons[indx].age > 18)
+            {
+                return Persons[indx] ;
+            }           
+        }).map((el,indx) => {
+            let result = Persons[indx].firstName + " " + "newText" + " ";
+            return result ;
+        })
+        document.write(newPersons);
+
+    </script>
+</body>
+
+</html>
