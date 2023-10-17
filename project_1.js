@@ -43,7 +43,7 @@ button.addEventListener('click', () => {
         updateLocalStorage(); // Save the updated suggestions to localStorage
     }
     suggestions.style.display = "none";
-
+    
 });
 
 search.addEventListener('input', () => {
@@ -61,6 +61,7 @@ search.addEventListener('input', () => {
             suggestionsDiv.classList = 'suggestionsDiv';
             suggestionsDiv.addEventListener('click', () => {
                 search.value = item; // Replace the text in the search box
+                suggestions.style.display = "none";
                 suggestions.innerHTML = ''; // Clear the suggestions
             });
             suggestions.appendChild(suggestionsDiv);
