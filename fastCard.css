@@ -1,0 +1,45 @@
+#page{
+    border: 2px double;
+    padding:0px 0px 0px 5px ;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+.top_heading{
+    margin-left: 4px;
+    font-size: 12px;
+}
+
+.top_right{
+    position: absolute;
+    top: 10px;
+    left: 62%
+}
+
+.mid_header{
+    font-weight: bold;
+    font-family: fantasy;
+    margin-left: 46%;
+    font-size: 24px;
+    
+}
+
+.midBottom_header{
+    font-size: 20px;
+    margin-left: 25%;
+}
+
+.lower_heading{
+    margin-left: 30%;
+    font-size: 14px;
+    margin-top: -14px;
+}
+
+.border_header{
+    border: 1.5px solid;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px 1px 0px 30px;
+}
