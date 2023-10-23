@@ -79,6 +79,15 @@ td{
     padding: 35px;
 }
 
+#backImg{
+    position: absolute;
+    mix-blend-mode:multiply;
+    width: 300px;
+    top: 50%;
+    left: 38%;
+    filter: blur(2px);
+}
+
 .left_img{
     position: absolute;
     width: 100px;
