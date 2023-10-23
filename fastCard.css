@@ -66,7 +66,17 @@ table,tr,td{
 }
 td{
     padding: 5px;
-    width: 95px;
+    width: 112px;
+}
+
+#imgCard{
+    border: 1px solid #b6b3b3;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 70%;
+    top: 31.5%;
+    padding: 35px;
 }
 
 .left_img{
