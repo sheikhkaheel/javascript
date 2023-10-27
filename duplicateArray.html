@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Remove Duplicate </title>
+</head>
+
+<body>
+    <script>
+        let nums = [1, 2, 1];
+        debugger;
+        for (let i = 0; i < nums.length; i++) {
+            for (let j = i + 1; j < nums.length; j++) {
+                if (nums[i] === nums[j]) {
+                    nums.splice(j, 1);
+                    j--; // Decrement j to account for the removed element
+                }
+            }
+        }
+        let k = nums.length;
+        document.write(k);
+
+    </script>
+</body>
+
+</html>

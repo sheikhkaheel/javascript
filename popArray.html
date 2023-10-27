@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Array Pop</title>
+</head>
+
+<body>
+    <script>
+        let nums = [1, 2, 3, 2];
+        let val = 2;
+        for (let i = 0; i < nums.length; i++) {
+            for (let j = 0; j < nums.length; j++) {
+                if (val === nums[i]) {
+                    nums.splice(i, 1); 
+                }
+            }
+        }
+        document.write(nums);
+    </script>
+</body>
+
+</html>

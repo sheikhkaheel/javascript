@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let nums1 = [1, 2, 3, 0, 0, 0];
+        let nums2 = [2, 3, 5];
+        let m = 3;
+        let n = 3;
+        let arr1 = nums1;
+        let arr2 = nums2;
+        let count = 0;
+        let arr3 = [];
+
+        for (let j = 0; j < arr1.length; j++) {
+            if (count < m) {
+                arr3.push(arr1[j]);
+                count++;
+            }
+        }
+
+        count = 0;
+
+        for (let i = 0; i < arr2.length; i++) {
+            if (count < n) {
+                arr3.push(arr2[i]);
+                count++;
+            }
+        }
+        arr3.sort();
+
+        return arr3;
+
+    </script>
+</body>
+
+</html>
