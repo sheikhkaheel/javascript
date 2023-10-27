@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Reverse Vowels</title>
+</head>
+
+<body>
+    <script>
+        let s = "hello";
+        let sArray = s.split(''); // Convert the string to an array
+        debugger;
+
+        for (let i = 0; i < sArray.length; i++) {
+            for (let j = i + 1; j < sArray.length; j++) {
+                if ((sArray[i] === 'a' || sArray[i] === 'e' || sArray[i] === 'i' || sArray[i] === 'o' || sArray[i] === 'u') &&
+                    (sArray[j] === 'a' || sArray[j] === 'e' || sArray[j] === 'i' || sArray[j] === 'o' || sArray[j] === 'u')) {
+                    let temp = sArray[j];
+                    sArray[j] = sArray[i];
+                    sArray[i] = temp;
+                }
+            }
+        }
+
+        let result = sArray.join(''); // Convert the array back to a string
+        document.write(result);
+
+
+    </script>
+</body>
+
+</html>
