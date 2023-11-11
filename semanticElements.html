@@ -52,21 +52,39 @@
         }
         section{
             height: 20%;
-            width: 68%;
-            height: 300px;
+            width: 140%;
+            height: 320px;
             padding: 5px;
             background-color: rgb(65, 165, 42);
             color: rgb(222, 218, 218);
         }
         aside{
-            position: absolute;
-            width: 27%;
+            /* position: relative; */
+            width: 47%;
             height: 320px;
             padding: 5px;
-            top: 26.5%;
-            left: 70%;
+            margin-left: 50%;
             background-color: rgb(208, 224, 27);
             color: rgb(142, 116, 68);
+        }
+        main{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        @media  (max-width: 40em){
+            main{
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1fr;
+            }
+            section{
+                height: 180px;
+                width: 98%;
+            }
+            aside{
+                height: 120px;
+                width: 98%;
+                margin-left:0px;
+            }
         }
     </style>
 </head>
