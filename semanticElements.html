@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Semantic Elements</title>
     <style>
         header,nav,section,main,footer,aside{
@@ -22,6 +23,9 @@
             padding: 12px 0px 2px 5px;
             background-color: rgb(42, 56, 165);
             color: white;
+            display: grid;
+            grid-template-columns: 5rem 5rem 5rem;
+            grid-template-rows: 1fr;
         }
         a{
             font-family: 'Courier New', Courier, monospace;
@@ -39,6 +43,9 @@
             background-color: rgb(34, 168, 178);
             color: rgb(255, 255, 255);
             font-family: 'Courier New', Courier, monospace;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
         }
         footer{
             height: 60px;
@@ -67,14 +74,17 @@
             background-color: rgb(208, 224, 27);
             color: rgb(142, 116, 68);
         }
-        main{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        @media  (max-width: 40em) and (min-width: 0em){
+        
+
+        @media screen and (max-width: 600px){
             main{
-                grid-template-rows: 1fr 1fr;
                 grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+            nav{
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                height: 70px;
             }
             section{
                 height: 180px;
@@ -84,6 +94,9 @@
                 height: 120px;
                 width: 98%;
                 margin-left:0px;
+            }
+            a{
+                width: 100%;
             }
         }
     </style>
