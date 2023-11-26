@@ -1,0 +1,79 @@
+﻿{
+  "UserRegistration": {
+    "user": [
+      {
+        "userId": "UserId",
+        "roleId": "RoleId",
+        "firstName": "FirstName",
+        "lastName": "MiddleName",
+        "middleName": "LastName",
+        "userName": "UserName",
+        "password": "Password",
+        "button1": "Save",
+        "button2": "Update",
+        "button3": "Delete",
+        "createdBy": "...",
+        "createdOn": "...",
+        "modifiedBy": "...",
+        "modifiedOn": "...",
+        "isDeleted": "..."
+      },
+      {
+        "userId": "01",
+        "roleId": "01",
+        "firstName": "Sheikh",
+        "lastName": "Kaheel",
+        "middleName": "Muhammad",
+        "userName": "sheikhkaheel",
+        "password": "1234",
+        "createdBy": "...",
+        "createdOn": "...",
+        "modifiedBy": "...",
+        "modifiedOn": "...",
+        "isDeleted": "..."
+      },
+      {
+        "userId": "02",
+        "roleId": "01",
+        "firstName": "Zaid",
+        "middleName": "Muhammad",
+        "lastName": "Shah",
+        "userName": "zaidshah",
+        "password": "5678",
+        "createdBy": "...",
+        "createdOn": "...",
+        "modifiedBy": "...",
+        "modifiedOn": "...",
+        "isDeleted": "..."
+      },
+      {
+        "userId": "03",
+        "roleId": "02",
+        "firstName": "Shataan",
+        "middleName": "Dar",
+        "lastName": "Waza",
+        "userName": "shataanwaza",
+        "password": "abcd",
+        "createdBy": "...",
+        "createdOn": "...",
+        "modifiedBy": "...",
+        "modifiedOn": "...",
+        "isDeleted": "..."
+      },
+      {
+        "userId": "04",
+        "roleId": "03",
+        "firstName": "Shafi",
+        "middleName": "Muhammad",
+        "lastName": "Dar",
+        "userName": "shafidar",
+        "password": "vxyz",
+        "createdBy": "...",
+        "createdOn": "...",
+        "modifiedBy": "...",
+        "modifiedOn": "...",
+        "isDeleted": "..."
+      }
+    ]
+  }
+}

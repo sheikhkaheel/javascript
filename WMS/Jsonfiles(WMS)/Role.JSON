@@ -1,0 +1,76 @@
+{
+  "UserRole": {
+    "role": [
+      {
+        "roleId": "RoleId",
+        "roleName": "RoleName",
+        "displayName": "DisplayName",
+        "isSuperAdmin": "IsSuperAdmin",
+        "isAdmin": "IsAdmin",
+        "isParent": "IsParent",
+        "isWaza": "IsWaza",
+        "isChild": "IsChild",
+        "isActive": "IsActive",
+        "button1": "Save",
+        "button2": "Update",
+        "button3": "Delete"
+      },
+      {
+        "roleId": "01",
+        "roleName": "papa",
+        "displayName": "Father",
+        "isSuperAdmin": "0",
+        "isAdmin": "0",
+        "isParent": "1",
+        "isWaza": "0",
+        "isChild": "0",
+        "isActive": "..."
+      },
+      {
+        "roleId": "02",
+        "roleName": "waze1",
+        "displayName": "Cook",
+        "isSuperAdmin": "0",
+        "isAdmin": "0",
+        "isParent": "0",
+        "isWaza": "1",
+        "isChild": "0",
+        "isActive": "..."
+      },
+      {
+        "roleId": "03",
+        "roleName": "pops",
+        "displayName": "Father",
+        "isSuperAdmin": "0",
+        "isAdmin": "0",
+        "isParent": "1",
+        "isWaza": "0",
+        "isChild": "0",
+        "isActive": "..."
+      },
+      {
+        "roleId": "04",
+        "roleName": "waze2",
+        "displayName": "Cook",
+        "isSuperAdmin": "0",
+        "isAdmin": "0",
+        "isParent": "0",
+        "isWaza": "1",
+        "isChild": "0",
+        "isActive": "..."
+      },
+      {
+        "roleId": "05",
+        "roleName": "papa",
+        "displayName": "Father",
+        "isSuperAdmin": "0",
+        "isAdmin": "0",
+        "isParent": "1",
+        "isWaza": "0",
+        "isChild": "0",
+        "isActive": "..."
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,87 @@
+﻿{
+  "wazas": {
+    "waza": [
+      {
+        "wazaId": "01",
+        "companyName": "Sheikh",
+        "age": 21,
+        "address": "Illahi Bagh",
+        "phoneNo": "6006307545",
+        "yearsOfExp": 10,
+        "RateOfMeatPer100Kg": 20000,
+        "RateOfChickenPer100Kg": 5000,
+        "latituteAndLongitute": "...",
+        "createdBy": "...",
+        "createdOn": "...",
+        "modifiedBy": "...",
+        "modifiedOn": "...",
+        "isDeleted": "..."
+      },
+      {
+        "wazaId": "02",
+        "companyName": "Sheikh",
+        "age": 50,
+        "address": "Baspora",
+        "phoneNo": "7006562105",
+        "yearsOfExp": 10,
+        "RateOfMeatPer100Kg": 20000,
+        "RateOfChickenPer100Kg": 5000,
+        "latituteAndLongitute": "",
+        "email": "shkkafeel@gmail.com",
+        "createdBy": "...",
+        "createdOn": "...",
+        "modifiedBy": "...",
+        "modifiedOn": "...",
+        "isDeleted": "..."
+      },
+      {
+        "wazaId": "03",
+        "companyName": "Saalim",
+        "age": 20,
+        "address": "Hawal",
+        "phoneNo": "600435489",
+        "yearsOfExp": 10,
+        "RateOfMeatPer100Kg": 20000,
+        "RateOfChickenPer100Kg": 5000,
+        "latituteAndLongitute": "",
+        "createdBy": "...",
+        "createdOn": "...",
+        "modifiedBy": "...",
+        "modifiedOn": "...",
+        "isDeleted": "..."
+      },
+      {
+        "wazaId": "04",
+        "companyName": "Sheikh",
+        "age": 20,
+        "address": "",
+        "phoneNo": "",
+        "yearsOfExp": 10,
+        "RateOfMeatPer100Kg": 20000,
+        "RateOfChickenPer100Kg": 5000,
+        "latituteAndLongitute": "",
+        "createdBy": "...",
+        "createdOn": "...",
+        "modifiedBy": "...",
+        "modifiedOn": "...",
+        "isDeleted": "..."
+      },
+      {
+        "wazaId": "05",
+        "companyName": "Sheikh",
+        "age": 20,
+        "address": "",
+        "phoneNo": "",
+        "yearsOfExp": 10,
+        "RateOfMeatPer100Kg": 20000,
+        "RateOfChickenPer100Kg": 5000,
+        "latituteAndLongitute": "",
+        "createdBy": "...",
+        "createdOn": "...",
+        "modifiedBy": "...",
+        "modifiedOn": "...",
+        "isDeleted": "..."
+      }
+    ]
+  }
+}
