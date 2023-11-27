@@ -1,4 +1,4 @@
-*{
+* {
     background-color: #f1faee;
 }
 
@@ -7,6 +7,7 @@ span {
     font-size: 2rem;
     margin-left: 2rem;
     line-height: 5rem;
+    background-color: #457b9d;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -18,7 +19,7 @@ td {
     border-collapse: collapse;
 }
 
-td{
+td {
     border: 0px solid transparent;
 }
 
@@ -28,8 +29,8 @@ td{
     text-align: center;
 }
 
-#userTable td{
-    font-size:1rem;
+#userTable td {
+    font-size: 1rem;
     padding: 1.7rem 1.92rem 1.7rem 1.92rem;
     text-align: center;
 }
@@ -53,15 +54,18 @@ h1 {
     padding: 10px 0px 10px 0px;
 }
 
-a{
+a {
     border: 0px solid transparent;
-    border-radius:10px ;
+    border-radius: 10px;
     background-color: #457b9d;
     text-decoration: none;
     color: #fff;
 }
 
-#Roles{
+#Roles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     background-color: #457b9d;
     width: 100%;
     margin-top: -1.3rem;
@@ -70,18 +74,25 @@ a{
 
 
 @media screen and (max-width: 360px) {
-    *{
+    * {
         margin: 0;
     }
 
     h1 {
         font-size: 3rem;
+        margin-bottom: 22px;
+    }
+
+    #Roles {
+        grid-template-columns: 1fr;
     }
 
     span {
-        font-size: 3rem;
-        margin-left: 30px;
+        font-size: 1.5rem;
+        margin-left: 10px;
         margin-right: 0px;
+        line-height: 2rem;
+
     }
 
     #roleTable {
@@ -89,8 +100,13 @@ a{
     }
 
     #roleTable td {
-        font-size: 5.7px;
-        padding: 1px 1px 1px 1px;
+        font-size: 7.3px;
+        padding: 10px 1px 10px 1px;
+        font-weight: bold;
+    }
+    #userTable td{
+        font-size: 8px;
+        padding: 14px 2.2px 14px 2.2px;
         font-weight: bold;
     }
 
