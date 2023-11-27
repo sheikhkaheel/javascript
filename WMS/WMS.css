@@ -39,7 +39,7 @@ button {
     width: 4rem;
 }
 
-@media screen and (min-width: 30px) {
+@media screen and (min-width: 360px) {
     * {
         margin: 0rem 0rem;
     }
