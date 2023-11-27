@@ -41,6 +41,7 @@ function ajaxCall2() {
             let parsediv2 = JSON.parse(data1);
 
             let table = document.createElement('table');
+            table.id = 'userTable';
             for (let i = 0; i < parsediv2.UserRegistration.user.length; i++) {
                 let tr = document.createElement('tr');
 
