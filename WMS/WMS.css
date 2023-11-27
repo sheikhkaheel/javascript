@@ -35,6 +35,12 @@ td {
     text-align: center;
 }
 
+#parentTable td {
+    font-size: .9rem;
+    padding: 1.3rem .2rem 1.3rem .2rem;
+    text-align: center;
+}
+
 button {
     border: 1px solid red;
     border-radius: 10px;
@@ -100,14 +106,22 @@ a {
     }
 
     #roleTable td {
-        font-size: 7.3px;
+        font-size: 6.75px;
         padding: 10px 1px 10px 1px;
         font-weight: bold;
+        overflow: hidden;
     }
     #userTable td{
-        font-size: 8px;
+        font-size: 7.35px;
+        padding: 14px 1px 14px 0px;
+        font-weight: bold;
+        overflow: hidden;
+    }
+    #parentTable td{
+        font-size: 2.8px;
         padding: 14px 2.2px 14px 2.2px;
         font-weight: bold;
+        overflow: hidden;
     }
 
     button {

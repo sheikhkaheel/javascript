@@ -2,6 +2,31 @@
 	"Parents": {
 		"parent": [
 			{
+				"parentId": "ParentId",
+				"firstName": "FirstName",
+				"middleName": "MiddleName",
+				"lastName": "LaastName",
+				"parentName": "ParentName",
+				"age": "Age",
+				"prefix": "Prefix",
+				"dob": "DOB",
+				"address": "Address",
+				"phoneNo": "PhoneNo",
+				"latituteAndLongitute": "LongAndLat",
+				"gender": "Gender",
+				"familyHead": "FamilyHead",
+				"houseImg": "HouseImg",
+				"email": "Email",
+				"button1": "Save",
+				"button2": "Update",
+				"button3": "Delete",
+				"createdBy": "...",
+				"createdOn": "...",
+				"modifiedBy": "...",
+				"modifiedOn": "...",
+				"isDeleted": "..."
+			},
+			{
 				"parentId": "01",
 				"firstName": "Sheikh",
 				"middleName": "Muhammad",
