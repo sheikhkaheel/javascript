@@ -39,9 +39,9 @@ button {
     width: 4rem;
 }
 
-@media screen and (min-width: 360px) {
+@media screen and (max-width: 1025px) {
     * {
-        margin: 0rem 0rem;
+        margin: 0;
     }
 
     h1 {
@@ -60,7 +60,7 @@ button {
 
     #roleTable td {
         font-size: 18px;
-        padding: 40px 8px 40px 8px;
+        padding: 80px 8px 80px 8px;
         font-weight: bold;
     }
 
