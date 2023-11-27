@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', function () {
+    let span1 = document.getElementById('span1');
+    let div1Displayed = false; // Flag to track whether div2 has been displayed
+
+    span1.addEventListener('click', function () {
+        if (!div1Displayed) {
+            ajaxCall1();
+            div1Displayed = true; // Set the flag to true after displaying div2
+        }
+    });
+});
+
+
+
 function ajaxCall1() {
     let div2 = document.getElementById('user');
     let div3 = document.getElementById('parent');
@@ -8,10 +22,12 @@ function ajaxCall1() {
     div3.style.display = 'none';
     div4.style.display = 'none';
     div5.style.display = 'none';
-    
-    // show div1
+
+    // Show div2 only if it has not been displayed before
     let div1 = document.getElementById('role');
-    div1.style.display = 'block';
+    if (div1.style.display === '' || div1.style.display === 'none') {
+        div1.style.display = 'block';
+    }
 
     let URL = `Jsonfiles(WMS)/Role.JSON`;
     fetch(URL).
@@ -20,7 +36,7 @@ function ajaxCall1() {
                 return response.text();
             }
             else {
-                div1.innerHTML = "Error";
+                throw new Error('Network response was not ok');
             }
         }).
         then((data1) => {
@@ -91,4 +107,5 @@ function ajaxCall1() {
 
             console.log(parseDiv1)
         })
+
 }

@@ -1,17 +1,31 @@
+document.addEventListener('DOMContentLoaded', function () {
+    let span2 = document.getElementById('span2');
+    let div2Displayed = false; // Flag to track whether div2 has been displayed
+
+    span2.addEventListener('click', function () {
+        if (!div2Displayed) {
+            ajaxCall2();
+            div2Displayed = true; // Set the flag to true after displaying div2
+        }
+    });
+});
+
 function ajaxCall2() {
     let div1 = document.getElementById('role');
     let div3 = document.getElementById('parent');
     let div4 = document.getElementById('child');
     let div5 = document.getElementById('waza');
-    
+
     div1.style.display = 'none';
     div3.style.display = 'none';
     div4.style.display = 'none';
     div5.style.display = 'none';
 
-    // Show div2
+    // Show div2 only if it has not been displayed before
     let div2 = document.getElementById('user');
-    div2.style.display = 'block';
+    if (div2.style.display === '' || div2.style.display === 'none') {
+        div2.style.display = 'block';
+    }
 
     let URL = `Jsonfiles(WMS)/User.JSON`;
     fetch(URL).
@@ -85,4 +99,5 @@ function ajaxCall2() {
 
             console.log(parsediv2)
         })
+
 }
