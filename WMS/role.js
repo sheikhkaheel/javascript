@@ -43,6 +43,7 @@ function ajaxCall1() {
             let parseDiv1 = JSON.parse(data1);
 
             let table = document.createElement('table');
+            table.id = "roleTable";
             for (let i = 0; i < parseDiv1.UserRole.role.length; i++) {
                 let tr = document.createElement('tr');
 
