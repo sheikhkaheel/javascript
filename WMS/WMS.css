@@ -106,19 +106,19 @@ a {
     }
 
     #roleTable td {
-        font-size: 6.75px;
+        font-size: 6.15px;
         padding: 10px 1px 10px 1px;
         font-weight: bold;
         overflow: hidden;
     }
     #userTable td{
-        font-size: 8.3px;
+        font-size: 7.7px;
         padding: 14px 1px 14px 0px;
         font-weight: bold;
         overflow: hidden;
     }
     #parentTable td{
-        font-size: 2.8px;
+        font-size: 2.5px;
         padding: 14px 2.2px 14px 2.2px;
         font-weight: bold;
         overflow: hidden;
