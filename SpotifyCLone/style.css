@@ -1,0 +1,66 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background-color: black;
+    color: white; 
+    overflow: hidden;
+}
+
+#main{
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar{
+    width: 340px;
+    background-color: black;
+    border-radius: 1rem;
+}
+
+.main-content{
+    flex: 1;
+    background-color: #121212;
+    overflow: auto;
+    border-radius: 1rem;
+}
+
+.music-player{
+    background-color: black;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 72px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.nav{
+    background-color: #121212;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    padding: 0.5rem 0.75px;
+}
+
+.nav-option{
+    height: 40px;
+    opacity: 0.7;
+    padding: .5rem .75rem;
+}
+
+.nav-option:hover{
+    opacity: 1;
+}
+
+.nav-option i {
+    font-size: 1.25rem;
+}
+
+.nav-option a {
+    font-size: 1rem;
+    margin-left: 1rem;
+}
