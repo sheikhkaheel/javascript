@@ -13,6 +13,7 @@ let winPatterns = [
     [2,4,6]
 ];
 
+let win = "";
 let checkWinner = function() {
     for(let patterns of winPatterns){
         // console.log(patterns[0] ,patterns[1], patterns[2]);
@@ -25,6 +26,7 @@ let checkWinner = function() {
         if(val1 != "" && val2 != "" && val3 != ""){
             if(val1 === val2 && val2 === val3){
                 alert(`${val1} is winner `);
+                win = true;
             }
         }
 
@@ -39,6 +41,9 @@ btns.forEach((btn)=>{
         } else {
             btn.innerText = "Y";
             turn=true;
+        }
+        if(win){
+            btn.innerText = "";
         }
         btn.disabled = true;
         checkWinner();
