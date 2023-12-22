@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="tictactoe.css">
 </head>
+
 <body>
-    <div class="container">
-        <button class="btns"></button>
-        <button class="btns"></button>
-        <button class="btns"></button>
-        <button class="btns"></button>
-        <button class="btns"></button>
-        <button class="btns"></button>
-        <button class="btns"></button>
-        <button class="btns"></button>
-        <button class="btns"></button>
+    <div id="firstPage">
+        <div id="winMessage"></div>
+        <h2>Tic Tac Toe</h2>
+        <button id="newGame"><a href="#secondPage">New Game</a></button>
     </div>
+        <div class="container" id="secondPage">
+            <button class="btns"></button>
+            <button class="btns"></button>
+            <button class="btns"></button>
+            <button class="btns"></button>
+            <button class="btns"></button>
+            <button class="btns"></button>
+            <button class="btns"></button>
+            <button class="btns"></button>
+            <button class="btns"></button>
+        </div>
+        <button id="reset">Reset</button>
+    
 </body>
 <script src="tictactoe.js"></script>
+
 </html>

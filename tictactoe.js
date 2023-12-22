@@ -1,6 +1,9 @@
 let turn = true;
-
+let firstPage = document.querySelector('#firstPage');
+let winMessage = document.getElementById('winMessage');
 let btns = document.querySelectorAll('.btns');
+let reset = document.querySelector('#reset');
+let newGame = document.querySelector('#newGame');
 
 let winPatterns = [
     [0,1,2],
@@ -25,7 +28,8 @@ let checkWinner = function() {
 
         if(val1 != "" && val2 != "" && val3 != ""){
             if(val1 === val2 && val2 === val3){
-                alert(`${val1} is winner `);
+                document.getElementById('firstPage').scrollIntoView({ behavior: 'smooth' });
+                winMessage.innerText = `${val1} is winner `;
                 win = true;
             }
         }
@@ -42,12 +46,27 @@ btns.forEach((btn)=>{
             btn.innerText = "Y";
             turn=true;
         }
-        if(win){
-            btn.innerText = "";
-        }
+        // if(win){
+        //     btn.innerText = "";
+        // }
         btn.disabled = true;
         checkWinner();
     })
 
 })
+
+reset.addEventListener("click", ()=>{
+    btns.forEach((btn)=>{
+        btn.innerText = "";
+        btn.disabled = false;
+        turn = true;
+    });
+})
+
+newGame.addEventListener("click", ()=>{
+    btns.forEach((btn)=>{
+        btn.disabled = false;
+        btn.innerText = "";
+    });
+});
     
