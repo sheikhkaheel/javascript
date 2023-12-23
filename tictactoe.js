@@ -65,8 +65,8 @@ btns.forEach((btn) => {
         //     btn.innerText = "";
         // }
         btn.disabled = true;
-        checkWinner();
         draw();
+        checkWinner();
     })
 
 })
