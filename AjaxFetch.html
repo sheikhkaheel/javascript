@@ -28,53 +28,55 @@
                     return res.json();
                 })
                 .then((data) => {
-                    console.log(data);
-
-                    let table = document.createElement('table');
-                    table.classList.add('table', 'table-striped');
-
-                    let thead = document.createElement('thead');
-                    let trHeader = document.createElement('tr');
-                    trHeader.classList.add('p-3');
-                    let thTitle = document.createElement('th');
-                    let thDes = document.createElement('th');
-
-                    thTitle.innerHTML = "Title";
-                    thDes.innerHTML = "Description";
-
-                    trHeader.appendChild(thTitle);
-                    trHeader.appendChild(thDes);
-                    thead.appendChild(trHeader);
-                    table.appendChild(thead);
-
-                    let tbody = document.createElement('tbody');
-                    for (let i = 0; i < data.products.length; i++) {
-                        let tr = document.createElement('tr');
-                        tr.classList.add('p-3');
-                        let tdTitle = document.createElement('td');
-                        let tdDes = document.createElement('td');
-
-                        tdTitle.innerHTML = data.products[i].title;
-                        tdDes.innerHTML = data.products[i].description;
-
-                        tr.appendChild(tdTitle);
-                        tr.appendChild(tdDes);
-
-                        tbody.appendChild(tr);
-                    }
-
-                    table.appendChild(tbody);
-
-                    document.body.appendChild(table);
-
-
-                    div.innerHTML = '';
-                    div.appendChild(table);
+                    content(data);
                 })
                 .catch((err) => {
-                    console.log(err);
+                    div.innerHTML = err.message;
                 });
         });
+
+        function content(data) {
+            let table = document.createElement('table');
+            table.classList.add('table', 'table-striped');
+
+            let thead = document.createElement('thead');
+            let trHeader = document.createElement('tr');
+            trHeader.classList.add('p-3');
+            let thTitle = document.createElement('th');
+            let thDes = document.createElement('th');
+
+            thTitle.innerHTML = "Title";
+            thDes.innerHTML = "Description";
+
+            trHeader.appendChild(thTitle);
+            trHeader.appendChild(thDes);
+            thead.appendChild(trHeader);
+            table.appendChild(thead);
+
+            let tbody = document.createElement('tbody');
+            for (let i = 0; i < data.products.length; i++) {
+                let tr = document.createElement('tr');
+                tr.classList.add('p-3');
+                let tdTitle = document.createElement('td');
+                let tdDes = document.createElement('td');
+
+                tdTitle.innerHTML = data.products[i].title;
+                tdDes.innerHTML = data.products[i].description;
+
+                tr.appendChild(tdTitle);
+                tr.appendChild(tdDes);
+
+                tbody.appendChild(tr);
+            }
+
+            table.appendChild(tbody);
+
+            document.body.appendChild(table);
+
+
+            div.innerHTML = '';
+            div.appendChild(table);
+        }
 
     </script>
 </body>
