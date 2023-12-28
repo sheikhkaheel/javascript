@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="text-center">
+        <button class="btn btn-outline-success m-3">Get</button>
+    </div>
+    <div id="content" class="container table-responsive"></div>
+
+    <script>
+        let button = document.querySelector('button');
+        let div = document.querySelector('#content');
+
+        button.addEventListener('click', () => {
+            let url = 'https://dummyjson.com/products';
+
+            fetch(url)
+                .then((res) => {
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data);
+
+                    let table = document.createElement('table');
+                    table.classList.add('table', 'table-striped');
+
+                    let thead = document.createElement('thead');
+                    let trHeader = document.createElement('tr');
+                    trHeader.classList.add('p-3');
+                    let thTitle = document.createElement('th');
+                    let thDes = document.createElement('th');
+
+                    thTitle.innerHTML = "Title";
+                    thDes.innerHTML = "Description";
+
+                    trHeader.appendChild(thTitle);
+                    trHeader.appendChild(thDes);
+                    thead.appendChild(trHeader);
+                    table.appendChild(thead);
+
+                    let tbody = document.createElement('tbody');
+                    for (let i = 0; i < data.products.length; i++) {
+                        let tr = document.createElement('tr');
+                        tr.classList.add('p-3');
+                        let tdTitle = document.createElement('td');
+                        let tdDes = document.createElement('td');
+
+                        tdTitle.innerHTML = data.products[i].title;
+                        tdDes.innerHTML = data.products[i].description;
+
+                        tr.appendChild(tdTitle);
+                        tr.appendChild(tdDes);
+
+                        tbody.appendChild(tr);
+                    }
+
+                    table.appendChild(tbody);
+
+                    document.body.appendChild(table);
+
+
+                    div.innerHTML = '';
+                    div.appendChild(table);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        });
+
+    </script>
+</body>
+
+</html>
