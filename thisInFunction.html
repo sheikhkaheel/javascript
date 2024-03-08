@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    // simple functions can be called before declared but anonymous functions cant be called before declared
+    // in a function this keyword represents a windows object
+        OuterFun();
+        function OuterFun() {
+            console.log(`OuterFun ${this}`);
+            InnerFun();
+            var InnerFun = function() {
+                console.log(`InnerFun ${this}`);
+            }
+        }
+
+        red
+    </script>
+</body>
+
+</html>
