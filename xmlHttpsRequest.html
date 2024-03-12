@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="getResponce" style="background-color: rgb(59, 58, 58); padding: 2rem; color: white;">
+        Dog Api
+    </div>
+
+    <script>
+
+        let div = document.getElementById('getResponce');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const xhr = new XMLHttpRequest();
+
+            xhr.responseType = 'json'; // used to parse date to json
+
+            xhr.onload = () => {
+                let i = 0;
+                const intervalId = setInterval(() => {
+                    if (i < xhr.response.data.length) {
+                        div.innerHTML = xhr.response.data[i].attributes.description;
+                        i++;
+                    } else {
+                        i = 0;
+                    }
+                }, 2000);
+            };
+
+
+            xhr.open('GET', 'https://dogapi.dog/api/v2/breeds');
+            xhr.send();
+
+        })
+    </script>
+</body>
+
+</html>
