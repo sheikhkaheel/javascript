@@ -9,7 +9,6 @@ function outerFunction() {
 
     innerFunction(); // Call inner function
     console.log(outerVariable); // Accessible within outerFunction
-    console.log(innerVariable); // Throws a ReferenceError: innerVariable is not defined
 }
 
 outerFunction(); // Call outer function
