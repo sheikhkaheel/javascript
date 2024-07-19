@@ -1,3 +1,14 @@
+// Pallindrome
+
+// Qn  :-  isPallindrome(121)
+// Ans :- 121
+
+// Qn  :-  isPallindrome(10)
+// Ans :- 1
+
+// Qn  :-  isPallindrome(-121)
+// Ans :- 121-
+
 var isPallidrome = function (val){
     let rev = 0, digit;
     while(val){
