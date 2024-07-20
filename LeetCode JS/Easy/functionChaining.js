@@ -1,4 +1,4 @@
-// Chaining Function 
+// Chaining Functions
 
 // Qn   :- Input  : expect(5).toBe(5)
 // Ans  :- Output : true 
