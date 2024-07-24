@@ -6,7 +6,7 @@ let objWithFn = {
         console.log("Output of OuterFuntion for self.name = ", self.name);
         (function () {
             console.log("Output of Inner Function for this.name = ", this.name);
-            console.log("Output of Inner Function for this.name = ", self.name);
+            console.log("Output of Inner Function for self.name = ", self.name);
         }());
     }
 }
