@@ -43,3 +43,22 @@ for (let key in inputObj){
 console.log(outputObj);
 
 // console.log(Object.entries(inputObj))
+
+// function flattenObject(obj, parentKey = '') {
+//     let result = {};
+
+//     Object.entries(obj).forEach(([key, value]) => {
+//         let newKey = parentKey ? `${parentKey}_${key}` : key;
+
+//         if (typeof value === 'object' && value !== null) {
+//             Object.assign(result, flattenObject(value, newKey));
+//         } else {
+//             result[newKey] = value;
+//         }
+//     });
+
+//     return result;
+// }
+
+// outputObj = flattenObject(inputObj);
+// console.log(outputObj);
