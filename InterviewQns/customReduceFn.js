@@ -13,5 +13,5 @@ let result = [1,2,3].customReduce((acc,item)=>{
 
 },0)
 
-console.log(result);
+console.log("This is the result",result);
 
