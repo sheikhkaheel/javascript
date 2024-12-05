@@ -18,7 +18,7 @@ async function getUser() {
 
 function showData(data) {
     // console.log(data);
-    // const users = document.querySelector('.show-users');
+    const users = document.querySelector('.show-users');
     const profile = document.querySelector('.profile');
     const bio =document.querySelector('.bio');
     const repo_count = document.querySelector('.repo-count');
