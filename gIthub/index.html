@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git User Data</title>
+</head>
+
+<body>
+
+
+    <div class="bg-stone-200 h-screen h-width">
+        <div class="px-12 py-8 flex justify-center gap-4">
+            <input placeholder="enter git username" class="placeholder:gray-400 search-input border w-[20rem] py-2 px-4 rounded-lg" type="text" name="search-data">
+            <button onclick="getUser()" class="bg-green-600 rounded-lg px-4 py-2 text-white">Get Data</button>
+        </div>
+
+        <div class="show-users p-4">
+            <div class="flex">
+                <img src="" class="profile hidden w-20 h-20 rounded-full" alt="">
+                <div class="bio px-4 py-7"></div>
+            </div>
+            <div class="name pt-4"></div>
+            <div class="flex gap-8">
+                <div class="repo-count py-4"></div>
+                <div class="following py-4"></div>
+                <div class="followers py-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- script file -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
